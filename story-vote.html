@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" /> -->
+
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto:300'>
+    <!-- <link rel="stylesheet" href="./files/fonts.css"/> -->
+
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+    <title>票選</title>
+
+    <link rel="shortcut icon" type="image/png" href="./favicon.png"/>
+    <meta name="theme-color" content="#2196F3">
+
+    <link rel="stylesheet" href="./files/material.teal-blue.min.css"/>
+    <link rel="stylesheet" href="./files/material-components-web.min.css"/>
+    <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-blue.min.css"/> -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"/> -->
+    <link rel="stylesheet" href="./files/custom.css">
+
+    <link rel="stylesheet" href="./files/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="./files/custom.min.css">
+    <link rel="stylesheet" href="./files/style.css">
+    <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
+
+    <!-- Nice fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Share+Tech" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lilita+One" rel="stylesheet">
+</head>
+
+<body id="body" ng-app="YourApp">
+    <!-- <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-primary" style="">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">TCFSH COS</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation" style="">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">網站首頁</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">提交頁面 <span class="sr-only">(目前頁面)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rules.html">投稿規則</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="help.html">取得幫助</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">關於我們</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav ml-auto">
+                    <div class="bs-component row" style="margin: 0 -2px 0 -2px; padding: 0 0 0 0;">
+                        <input class="form-control mr-sm-2" type="text" placeholder="關鍵字" style="width: 70%; height: 36px; margin-right: 0.5rem !important;">
+                        <a tabindex="0" class="btn my-2 my-sm-0 btn-success" data-toggle="popover" role="button" data-trigger="focus" data-placement="bottom"
+                        data-content="沒有這個功能。想不到吧"
+                        data-original-title="假的" data-container="body" title="" style="width: 25%; height: 36px; margin: 0 0 0 0 !important;">搜尋</a>
+                    </div>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+    <div id="top-bar"></div>
+
+    <div id="drawer"></div>
+
+    <div class="page-content">
+
+        <!-- <div class="modal fade" id="modal-rules" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">影片組投稿規則</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <ol start="0">
+                            <li>此為精簡版規則，詳情請見<a href="rules.html">這裡</a>。(未完成)</li>
+                            <li>未經原作者同意，本組將不會公開該部作品或用於任何商業用途，除非已決議採用之。</li>
+                            <li>投稿格式以 <a href="https://www.markdownguide.org/getting-started" target="_blank">markdown</a> 或純文字為佳。欲編輯 markdown 可使用 <a href="https://dillinger.io" target="_blank">dillinger.io</a> 。(非業配)</li>
+                            <li>稿件請著重故事與班級的關聯性，但不需為完整故事或劇本。</li>
+                            <li>本組檢閱所有作品後，將選出部份送交全班投票，始得出最終採用之稿件。<b>本組審核作品時，擁有是否採用的絕對決定權。</b>必要時，本組可結合數件作品之內容或特點。</li>
+                            <li>來稿請勿出現違反法律或善良風俗之內容，亦不得有抄襲、冒用等情況。</li>
+                        </ol>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-dismiss="modal">確定</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+
+        <div class="section-header clearfix" id="title">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        劇本票選
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section style="margin-top: 3rem;">
+            <p>
+                票選系統尚未開放。
+            </p>
+            <!-- <br></br> -->
+            <button type="button" class="mat-button mdc-button mdc-button--raised blue-button" onClick="window.location='index.html'">
+                好好喔
+            </button>
+        </section>
+
+
+        <div style="display: none;">
+            <form action="https://getsimpleform.com/messages?form_api_token=a8e34e71a6c26a7f81426969f162d7b8" method="post" enctype="multipart/form-data" onsubmit="onSuccess()">
+                <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
+                <!-- <input type='hidden' name='redirect_to' value='<the complete return url e.g. http://fooey.com/thank-you.html>' /> -->
+                <!-- all your input fields here.... -->
+                <br>
+                <br>
+                <p>
+                    如果你對於台中一中 0822 的成果發表會有任何的建議或想法，你可以透過以下表單來提交，並請儘量讓你的想法易懂且有建設性。<strong>與提交內容對應的組別或工作人員擁有決定是否採納該建議的最終權利。</strong>
+                    <!-- 如果你對於台中一中 0822 的成果發表會有任何的建議或想法，你可以透過以下表單來提交。投稿者不限於 0822 的同學，但請儘量讓你的想法易懂且有建設性。<strong>與提交內容對應的組別或工作人員擁有決定是否採納該建議的最終權利。</strong> -->
+                </p>
+                <p>
+                    若你要投稿影片故事內容，請參閱<a onclick="showRules();" href="javascript:void(0);">投稿規則</a>；按<a href="index.html">這裡</a>返回首頁。
+                </p>
+                <div class="form-group">
+                    <!--
+                        <hr class="sep">
+                        <label for="yourname">你是誰?<span class="text-danger"> *</span></label>
+                        <input id="yourname" type="text" name="name" class="form-control" placeholder="你的名字" rows="1" required onInput="onTextChange(this)"></input>
+                        <small class="form-text text-muted">
+                            不一定要是真名，但至少要讓我們認得出是誰提交的文件。無法辨認作者的稿件將會被無條件回收。
+                        </small> -->
+                        <!-- <div class="mdc-text-field">
+                            <input type="text" id="my-text-field" class="mdc-text-field__input">
+                            <label class="mdc-floating-label" for="my-text-field">你的名字</label>
+                            <div class="mdc-line-ripple"></div>
+                            <p class="mdc-text-field-helper-text" aria-hidden="true">meoww</p>
+                        </div> -->
+                        <!-- <div class="mdc-text-field mdc-text-field--fullwidth">
+                            <input class="mdc-text-field__input" type="text" placeholder="Full-Width Text Field" aria-label="Full-Width Text Field">
+                        </div>
+                    -->
+                    <div class="mdc-text-field mdc-text-field--outlined mdc-text-field--with-trailing-icon" id="yourname-container" style="width: 100%">
+                        <input name="name" id="yourname" class="mdc-text-field__input" style="width: 100%" autocomplete="off" required="true" onInput="onTextChange(this)">
+                        <label for="yourname" class="mdc-floating-label">你的名字</label>
+                        <!-- <i class="material-icons mdc-text-field-icon mdc-text-field__icon" tabindex="0" role="button" onClick="document.getElementById('yourname').value='';">delete</i> -->
+                        <i class="material-icons mdc-text-field__icon" data-mdc-tooltip="姓名" role="img" tabindex="0">info</i>
+                        <div class="mdc-notched-outline">
+                            <svg>
+                                <path class="mdc-notched-outline__path"/>
+                            </svg>
+                        </div>
+                        <div class="mdc-notched-outline__idle"></div>
+                    </div>
+                    <!-- <div class="text-field-container" style="width: 100%;">
+                        <div class="mdc-text-field mdc-text-field--upgraded mdc-text-field--multiline" style="width: 100%">
+                            <input type="text" id="text-field-name"  rows="8" class="mdc-text-field__input"/>
+                            <label class="mdc-floating-label" for="text-field-name">你的名字</label>
+                            <div class="mdc-line-ripple" style="transform-origin: 92.5px center 0px;"></div>
+                        </div>
+                    </div> -->
+                </div>
+                <div class="form-group">
+                    <!-- <hr class="sep"> -->
+                    <label class="description-label">收件者是?&nbsp;(多選)</label>
+                    <div class="toggle-button-group">
+                        <button type="button" id="group-btn1" class="mat-button mdc-button mdc-button--outlined   red-button blue-button" onClick="select_group(this)" style="margin-bottom: 3px">美術組</button>
+                        <button type="button" id="group-btn0" class="mat-button mdc-button mdc-button--outlined orange-button blue-button" onClick="select_group(this)" style="margin-bottom: 3px">總副召</button>
+                        <button type="button" id="group-btn6" class="mat-button mdc-button mdc-button--outlined yellow-button blue-button" onClick="select_group(this)" style="margin-bottom: 3px">音樂組</button>
+                        <button type="button" id="group-btn3" class="mat-button mdc-button mdc-button--outlined green-button blue-button" onClick="select_group(this)" style="margin-bottom: 3px">影片組</button>
+                        <button type="button" id="group-btn4" class="mat-button mdc-button mdc-button--outlined blue-button blue-button" onClick="select_group(this)" style="margin-bottom: 3px">文宣組</button>
+                        <button type="button" id="group-btn2" class="mat-button mdc-button mdc-button--outlined purple-button blue-button" onClick="select_group(this)" style="margin-bottom: 3px">公關組</button>
+                        <button type="button" id="group-btn5" class="mat-button mdc-button mdc-button--outlined pink-button blue-button" onClick="select_group(this)" style="margin-bottom: 3px">活動組</button>
+                        <button type="button" id="group-btn7" class="mat-button mdc-button mdc-button--outlined brown-button blue-button" onClick="select_group(this)" style="margin-bottom: 3px">其他人</button>
+                    </div>
+                    <input class="form-control" name="groups" id="groups" type="text" placeholder="Invisible input here…" style="display: none"></input>
+                    <span class="mdc-form-field form-group">
+                        <div class="mdc-checkbox">
+                            <input type="checkbox" class="mdc-checkbox__native-control" id="color-switch" onChange="toggle_color(this.checked);"/>
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                        </div>
+                        <label class="checkbox-label" for="color-switch">
+                            彩虹
+                        </label>
+                    </span>
+                </div>
+                <div class="form-group">
+                    <!-- <hr class="sep"> -->
+                    <!-- <label for="yoursub">提交內容<span class="text-danger"> *</span></label>
+                    <textarea class="form-control" name="submission" id="yoursub" style="margin-top: 0px; margin-bottom: 0px; height: 150px;" maxlength="4096" placeholder="輸入文字" required onInput="onTextChange(this)"></textarea>
+                    <small class="form-text text-muted">
+                        (電腦版)從右下角可以調整文字框大小。
+                    </small> -->
+                    <!-- <div class="mdc-text-field mdc-text-field--textarea">
+                        <textarea id="textarea" class="mdc-text-field__input"></textarea>
+                        <label for="textarea" class="mdc-floating-label">提交內容</label>
+                    </div> -->
+                    <div class="mdc-text-field text-field mdc-text-field--fullwidth mdc-text-field--textarea mdc-text-field--upgraded" id="yoursub-container">
+                        <textarea name="submission" id="yoursub" class="mdc-text-field__input" required onInput="onTextChange(this)"></textarea>
+                        <label class="mdc-floating-label" for="yoursub">提交內容</label>
+                        <!-- <i class="material-icons mdc-text-field__icon" data-mdc-tooltip="你的投稿內容" role="img" tabindex="0">info</i> -->
+                    </div>
+                </div>
+                <!-- <p>
+                    另外，你也可以選擇上傳一個檔案。僅接受文件格式(.pdf, .docx, etc)或圖片(.png, .tiff, etc)。若檔案大小超過限制，你可以將它上傳到雲端儲存空間並把連結給我們。
+                </p> -->
+                <div class="form-group">
+                    <!-- <hr class="sep"> -->
+                    <!-- <input type="file" name="File Upload" class="form-control fileupload"> -->
+                    <!-- <label for="upload">&nbsp;No file chosen</label> -->
+                    <!-- <label for="file-upload1" class="custom-file-upload">
+                        Custom Upload
+                    </label> -->
+                    <label class="description-label">你可以上傳一個大小 &leq;1MiB 的檔案。恕不接受文件或圖片以外的檔案格式。</label>
+                    <br>
+                    <span>
+                        <label id="upload-button1" for="file-upload1" class="mat-button mdc-button mdc-button--raised gray-button">選擇檔案</label>
+                        <input id="file-upload1" name="attachment" type="file" class="file-upload form-control" onChange="uploadOnChange(this)" style="display: none;"/>
+                        <label id="filename1" style="position: relative;"></label>
+                    </span>
+                    <!-- <small class="form-text">
+                        <span class="text-muted">
+                            選擇要上傳的檔案，檔案大小上限為 1MiB。
+                        </span>
+                        <span class="text-warning">
+                            此功能目前在實驗階段。
+                        </span>
+                    </small> -->
+                </div>
+                <!-- hidden for now -->
+                <span class="mdc-form-field form-group" style="display: none;">
+                    <div class="mdc-checkbox">
+                        <input type="checkbox" class="mdc-checkbox__native-control" id="agree" checked/>
+                        <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                    </div>
+                    <label class="checkbox-label" for="agree">
+                        我已詳讀並同意<a href="terms_of_use.html" target="_blank" required>使用者條款</a>及<a href="privacy_policy.html" target="_blank">隱私權政策</a>。
+                    </label>
+                    <!-- <label class="checkbox-label" for="agree">
+                        I agree to the <a href="terms_of_use.html" target="_blank">Terms of Use</a> and <a href="privacy_policy.html" target="_blank">Privacy Policy</a>.<span class="text-danger"> *</span>
+                    </label> -->
+                </span>
+                <div class="form-group recaptcha-container">
+                    <img class="ratio" hidden src="placeholder-304x78.png"></img>
+                    <div class="g-recaptcha" data-theme="dark" data-size="normal" data-sitekey="6LeAqGkUAAAAAD81DFKbkAC-bgP1MYS5Tq3HQS9n">
+                    </div>
+                </div>
+                <!-- <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="agree" required>
+                        <label class="custom-control-label" for="agree" style="font-size: 0.9375rem;">我已詳讀並同意<a href="terms_of_use.html" target="_blank">使用者條款</a>及<a href="privacy_policy.html" target="_blank">隱私權政策</a>。<span class="text-danger"> *</span></label>
+                    </div>
+                </div> -->
+                <div class="form-group">
+                    <button id="submit-button" type="button" class="mat-button mdc-button mdc-button--raised blue-button" onClick="submitForm()">送出</button>
+                    <!-- &nbsp; -->
+                    <button id="reset-button" type="button" class="mat-button mdc-button mdc-button--raised gray-button" onClick="resetForm()">清除</button>
+                </div>
+                <aside id="confirm-submission-dialog" class="mdc-dialog">
+                    <div class="mdc-dialog__surface">
+                        <header class="mdc-dialog__header">
+                            <h2 id="confirm-submission-dialog-label" class="mdc-dialog__header__title">
+                                確認上傳
+                            </h2>
+                        </header>
+                        <section id="confirm-submission-dialog-description" class="mdc-dialog__body">
+                            確定要提交這些內容?
+                        </section>
+                        <footer class="mdc-dialog__footer">
+                            <button type="submit" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">確定</button>
+                            <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">取消</button>
+                        </footer>
+                    </div>
+                    <div class="mdc-dialog__backdrop"></div>
+                </aside>
+            </form>
+        </div>
+
+        <!-- <aside id="my-mdc-dialog"
+          class="mdc-dialog"
+          role="alertdialog"
+          aria-labelledby="my-mdc-dialog-label"
+          aria-describedby="my-mdc-dialog-description">
+          <div class="mdc-dialog__surface">
+            <header class="mdc-dialog__header">
+              <h2 id="my-mdc-dialog-label" class="mdc-dialog__header__title">
+                Use Google's location service?
+              </h2>
+            </header>
+            <section id="my-mdc-dialog-description" class="mdc-dialog__body">
+              Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.
+            </section>
+            <footer class="mdc-dialog__footer">
+              <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">Nope</button>
+              <button type="button" class="mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">Yep</button>
+            </footer>
+          </div>
+          <div class="mdc-dialog__backdrop"></div>
+        </aside> -->
+
+        <aside id="form-incomplete-dialog" class="mdc-dialog">
+            <div class="mdc-dialog__surface">
+                <header class="mdc-dialog__header">
+                    <h2 id="form-incomplete-dialog-label" class="mdc-dialog__header__title">
+                        表單未完成
+                    </h2>
+                </header>
+                <section id="form-incomplete-dialog-description" class="mdc-dialog__body">
+                    請填完必填的部份再送出。
+                </section>
+                <footer class="mdc-dialog__footer">
+                    <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">確定</button>
+                </footer>
+            </div>
+            <div class="mdc-dialog__backdrop"></div>
+        </aside>
+
+        <aside id="not-robot-dialog" class="mdc-dialog">
+            <div class="mdc-dialog__surface">
+                <header class="mdc-dialog__header">
+                    <h2 id="not-robot-dialog-label" class="mdc-dialog__header__title">
+                        你是機器人嗎?
+                    </h2>
+                </header>
+                <section id="not-robot-dialog-description" class="mdc-dialog__body">
+                    根據投稿規則，我們不能接受機器人的稿件。
+                </section>
+                <footer class="mdc-dialog__footer">
+                    <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">是</button>
+                    <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">不是</button>
+                </footer>
+            </div>
+            <div class="mdc-dialog__backdrop"></div>
+        </aside>
+
+        <aside id="rules-dialog" class="mdc-dialog">
+            <div class="mdc-dialog__surface">
+                <header class="mdc-dialog__header">
+                    <h2 id="rules-dialog-label" class="mdc-dialog__header__title">
+                        影片組投稿規則
+                    </h2>
+                </header>
+                <section id="rules-dialog-description" class="mdc-dialog__body">
+                    <ol start="0">
+                        <li>此為精簡版規則，詳情請見<a href="rules.html">這裡</a>。(不存在)</li>
+                        <li>未經原作者同意，本組將不會公開該部作品或用於任何商業用途，除非已決議採用之。</li>
+                        <li>投稿格式以 <a href="https://www.markdownguide.org/getting-started" target="_blank">markdown</a> 或純文字為佳。欲編輯 markdown 可使用 <a href="https://dillinger.io" target="_blank">dillinger.io</a> 。(非業配)</li>
+                        <li>稿件請著重故事與班級的關聯性，但不需為完整故事或劇本。</li>
+                        <li>本組檢閱所有作品後，將選出部份送交全班投票，始得出最終採用之稿件。<b>本組審核作品時，擁有是否採用的絕對決定權。</b>必要時，本組可結合數件作品之內容或特點。</li>
+                        <li>來稿請勿出現違反法律或善良風俗之內容，亦不得有抄襲、冒用等情況。</li>
+                        <li>機器人不得投稿。</li>
+                    </ol>
+                </section>
+                <footer class="mdc-dialog__footer">
+                    <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">確定</button>
+                </footer>
+            </div>
+            <div class="mdc-dialog__backdrop"></div>
+        </aside>
+
+        <footer id="footer">
+            <!-- will be loaded using javascript -->
+        </footer>
+
+        <script type="text/javascript" src="./files/jquery.min.js"></script>
+        <script type="text/javascript" src="./files/build.js"></script>
+
+        <script type="text/javascript" src="./files/popper.min.js"></script>
+        <script type="text/javascript" src="./files/bootstrap.min.js"></script>
+        <script type="text/javascript" src="./assets/js/custom.js"></script>
+
+        <!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
+        <script defer src="./files/material-components-web.min.js"></script>
+        <!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
+        <!-- <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
+        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+
+        <!-- recaptcha -->
+        <script src='https://www.google.com/recaptcha/api.js?hl=zh-TW'></script>
+
+        <script>
+            // preventing enter key from submitting the form
+            $(document).on("keypress", ":input:not(textarea)", function(event) {
+                return event.keyCode != 13;
+            });
+            //
+            // $(window).resize(function() {
+            //     var recaptcha = $(".g-recaptcha");
+            //     if(recaptcha.css('margin') == '0px') {
+            //         var newScaleFactor = recaptcha.parent().innerWidth() / 304;
+            //         newScaleFactor = newScaleFactor > 1 ? 1 : newScaleFactor;
+            //         recaptcha.css('transform', 'scale(' + newScaleFactor + ')');
+            //         recaptcha.css('transform-origin', '0 0');
+            //     }
+            //     else {
+            //         recaptcha.css('transform', 'scale(1)');
+            //         recaptcha.css('transform-origin', '0 0');
+            //     }
+            // });
+            //
+            // $(function() {
+            //     var recaptcha = $(".g-recaptcha");
+            //     if(recaptcha.css('margin') == '0px') {
+            //         var newScaleFactor = recaptcha.parent().innerWidth() / 304;
+            //         newScaleFactor = newScaleFactor > 1 ? 1 : newScaleFactor;
+            //         recaptcha.css('transform', 'scale(' + newScaleFactor + ')');
+            //         recaptcha.css('transform-origin', '0 0');
+            //     }
+            //     else {
+            //         recaptcha.css('transform', 'scale(1)');
+            //         recaptcha.css('transform-origin', '0 0');
+            //     }
+            // });
+
+            // update custom file button
+            function uploadOnChange(e) {
+                var upload_button = document.getElementById('upload-button1');
+                if(e.value == ""){
+                    // document.getElementById('filename1').innerHTML = "沒有東西";
+                    document.getElementById('filename1').innerHTML = "";
+                    upload_button.innerHTML = "選擇檔案";
+                    upload_button.className = "mat-button mdc-button mdc-button--raised gray-button";
+                    mdc.ripple.MDCRipple.attachTo(upload_button);
+                    return false;
+                }
+
+                if(e.files[0].size > 1048576){
+                    document.getElementById('filename1').innerHTML = "檔案過大! 你可以改為將其上傳到別的地方並把連結貼在文字框內。";
+                    upload_button.innerHTML = "選擇檔案";
+                    upload_button.className = "mat-button mdc-button mdc-button--raised red-button";
+                    mdc.ripple.MDCRipple.attachTo(upload_button);
+                    e.value = "";
+                    return false;
+                };
+
+                var filename = e.value;
+                var lastIndex = filename.lastIndexOf("\\");
+                if (lastIndex >= 0) {
+                    filename = filename.substring(lastIndex +1);
+                    document.getElementById('filename1').innerHTML = filename;
+                    upload_button.innerHTML = "換一個檔案";
+                    upload_button.className = "mat-button mdc-button mdc-button--raised green-button";
+                    mdc.ripple.MDCRipple.attachTo(upload_button);
+                }
+            }
+
+            function showModal(id) {
+                document.getElementById(id).modal('show');
+            }
+
+            function onTextChange(e) {
+                var a = new mdc.textField.MDCTextField(document.querySelector('#' + e.id + '-container'));
+                if(e.value.trim() == "") {
+                    a.valid = false;
+                }else{
+                    a.valid = true;
+                }
+            }
+
+            function showRules(){
+                var rules_dialog = new mdc.dialog.MDCDialog(document.querySelector('#rules-dialog'));
+                rules_dialog.show();
+            }
+
+            // js for validating required fields
+            function validate() {
+                var valid = true;
+                var name = document.getElementById('yourname').value;
+                var subm = document.getElementById('yoursub').value;
+                if(name.trim() == "" || name == null){
+                    document.getElementById('yourname').value = "";
+                    valid = false;
+                    var a = new mdc.textField.MDCTextField(document.querySelector('#yourname-container'));
+                    a.valid = false;
+                    // document.getElementById('yourname').className = "";
+                }
+                if(subm.trim() == "" || subm == null){
+                    document.getElementById('yoursub').value = "";
+                    valid = false;
+                    // set text field style
+                    var b = new mdc.textField.MDCTextField(document.querySelector('#yoursub-container'));
+                    b.valid = false;
+                    // document.getElementById('yoursub').className = "";
+                }
+                if(!document.getElementById('agree').checked){
+                    valid = false;
+                }
+
+                if(valid){
+                    // client side check for captcha WARNING: insecure
+                    if(grecaptcha.getResponse() == '') {
+                        var captcha_dialog = new mdc.dialog.MDCDialog(document.querySelector('#not-robot-dialog'));
+                        captcha_dialog.show();
+                        return;
+                    }
+
+                    var confirm_dialog = new mdc.dialog.MDCDialog(document.querySelector('#confirm-submission-dialog'));
+                    confirm_dialog.show();
+                }else{
+                    // show invalid dialog
+                    var incomplete_dialog = new mdc.dialog.MDCDialog(document.querySelector('#form-incomplete-dialog'));
+                    incomplete_dialog.show();
+                }
+            }
+
+            function onSuccess() {
+                // alert("Entry submitted.");
+            }
+
+            var group_selected = [false, false, false, false, false, false, false, false];
+
+            function select_group(btn){
+                // id of button clicked
+                var gid = Number(btn.id[9])
+
+                // array of colors
+                // var colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown"];
+                var colors = ["orange", "red", "purple", "green", "blue", "pink", "yellow", "brown"];
+
+                // array of color classes
+                var cclass = colors[gid] + "-button";
+
+                // change state
+                group_selected[gid] = !group_selected[gid];
+
+                // change button style
+                if(group_selected[gid]){
+                    btn.classList.remove("mdc-button--outlined");
+                    btn.classList.add("mdc-button--raised");
+                }else{
+                    btn.classList.remove("mdc-button--raised");
+                    btn.classList.add("mdc-button--outlined");
+                }
+            }
+
+            function toggle_color(enabled){
+                // array of colors
+                // var colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown"];
+                var colors = ["orange", "red", "purple", "green", "blue", "pink", "yellow", "brown"];
+
+                // change button style
+                for(var i = 0; i < 8; i++){
+                    var btn = document.getElementById('group-btn' + i);
+                    if(enabled){
+                        btn.classList.remove("blue-button");
+                        btn.classList.add(colors[i] + '-button');
+                    }else{
+                        btn.classList.remove(colors[i] + '-button');
+                        btn.classList.add("blue-button");
+                    }
+                }
+            }
+
+            function resetForm(){
+                // reset text fields and their styles
+                document.getElementById('yourname').value = "";
+                var name = new mdc.textField.MDCTextField(document.querySelector('#yourname-container'));
+                name.valid = true;
+                document.getElementById('yoursub').value = "";
+                var sub = new mdc.textField.MDCTextField(document.querySelector('#yoursub-container'));
+                sub.valid = true;
+
+                // clear file
+                document.getElementById('file-upload1').value = "";
+                uploadOnChange(document.getElementById('file-upload1'));
+
+                // toggle all active items
+                for(var i = 0; i < 8; i++){
+                    if(group_selected[i]){
+                        select_group(document.getElementById('group-btn' + i));
+                    }
+                }
+
+                // uncheck the 'agree terms and conditions'
+                // document.getElementById('agree').checked = false;
+            }
+
+            function submitForm() {
+                validate();
+                // submit a big string instead of 8 booleans
+                var groupnames = ["總副召", "美術組", "公關組", "影片組", "文宣組", "活動組", "音樂組", "其他人"]
+                var gs = "selected: ";
+                for (var i = 0; i < 8; i++) {
+                    if (group_selected[i]) {
+                        gs += groupnames[i] + " ";
+                    }
+                }
+                document.getElementById('groups').value = gs.trim();
+            }
+        </script>
+
+    </div>
+</body>
+</html>
