@@ -1,4 +1,4 @@
-// load common layouts(NOTE: must be run AFTER including jquery)
+// load common layouts from local directory(NOTE: must be run AFTER including jquery)
 $("#footer").load("footer.html");
 $("#drawer").load("drawer.html");
 $("#top-bar").load("top-bar.html");
