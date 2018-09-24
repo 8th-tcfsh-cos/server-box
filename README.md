@@ -1,6 +1,6 @@
 # Server Box
 
-The official web server repo for the TCFSH COS box.
+The official website repo for the TCFSH COS box. The website is currently served on a Google Cloud VPS.
 
 ## What's This?
 

@@ -1,0 +1,49 @@
+/* css file for cos wap files */
+
+header.mdc-top-app-bar {
+    background-color: #AB47BC;
+}
+
+.mdc-drawer__header-content {
+    background-color: #2196F3;
+}
+
+.purple-button.mdc-button--raised, .purple-button.mdc-button--unelevated, .purple-button.mdc-button--outlined:after, .purple-button.mdc-button--outlined:before {
+    background-color: #AB47BC !important;
+}
+.purple-button.mdc-button--outlined {
+    border-color: #AB47BC !important;
+    color: #AB47BC !important;
+}
+
+:root {
+    --mdc-theme-secondary: #2196F3;
+    --mdc-theme-primary: #AB47BC;
+}
+
+a {
+    color: #2196F3;
+}
+a:hover {
+    color: #1666A3;
+}
+
+::selection {
+    background-color: rgba(34, 150, 250, 0.4);
+}
+
+.alert {
+    background-color: #2399F7;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px black;
+}
+.alert-primary {
+    background-color: #2399F7;
+}
+.alert:hover {
+    box-shadow: 0px 6px 15px black;
+    transform: box-shadow 0.5s;
+}
+.alert .close:not(:hover) {
+    opacity: 0.6;
+}
