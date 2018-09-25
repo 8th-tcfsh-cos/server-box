@@ -1,3 +1,9 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+*:not(.material-icons) {
+    font-family: "Share Tech", "Noto Sans TC";
+}
+
 ::selection {
     background-color: rgba(0, 204, 153, 0.3);
     text-shadow: none;
@@ -54,7 +60,7 @@ body {
 }
 
 .page-content {
-    width: calc(82vw + 20px); /* wider on small devices */
+    width: calc(84vw + 30px); /* wider on small devices */
     margin: auto;
     margin-top: 90px;
     padding: 10px;
@@ -494,10 +500,147 @@ ul li {
     animation: .30s fadeIn;
 }
 
-
-*:not(.material-icons) {
-    font-family: "Share Tech";
+.page-header {
+    /* margin-left: 4px; */
 }
+
+#announcement-container {
+    margin-top: 3rem;
+}
+.announcement {
+    display: flex;
+    margin-top: 1rem;
+}
+.announcement .a-date {
+    font-family: "Share Tech Mono";
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 2px 16px 0px 3px;
+}
+.a-card-title {
+    /* font-family: "Share Tech Mono"; */
+    font-weight: bold;
+}
+.announcement .a-content {
+    margin-top: 8px;
+    flex: 1;
+    text-align: left;
+}
+
+.a-card {
+  width: 350px;
+}
+.mdc-card {
+    height: auto;
+    color: #222;
+}
+.card.mb-3 {
+    margin-bottom: 1.4rem;
+}
+.card {
+    background-color: #343434;
+}
+.card-header {
+    background-color: #404040;
+}
+.mdc-button.mat-button.card-button-ok {
+    background-color: rgba(33, 150, 240, 0);
+}
+a.card-link {
+    color: #2196F3;
+}
+a.card-link:hover {
+    color: #1565A2;
+}
+
+/* stolen from w3schools */
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 10000; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0, 0, 0); /* Black fallback color */
+    background-color: rgba(0, 0, 0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: left 0.5s, width 0.5s, top 0.5s, height 0.5s /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    position: absolute;
+    /*top: 25%;*/ /* 25% from the top */
+    /* width: 100%; */
+    width: calc(84vw + 30px);
+    height: auto;
+    margin-left: calc(8vw - 15px);
+    margin-top: auto;
+    text-align: center; /* Centered text/links */
+    /* margin-top: 30px;*/ /*30px top margin to avoid conflict with the close button on smaller screens */
+    top: calc(50%);
+    transform: translateY(-50%);
+    overflow-y: hidden;
+    vertical-align: middle;
+}
+
+.overlay-closebtn {
+    /* width: 3rem;
+    height: 3rem; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 20000;
+}
+
+a[role="button"].mat-button:hover {
+    text-decoration: none;
+}
+
+.mdc-linear-progress {
+    text-align: left;
+    /* wider on small devices */
+    width: calc(24% + 80px);
+    /* manually center */
+    left: calc(38% - 40px);
+}
+
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+
+.overlay-content > img {
+    object-fit: scale-down;
+    max-width: 90vw;
+    max-height: 90vh;
+}
+
+/* When you mouse over the navigation links, change their color */
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+
+.material-icons {
+    padding: 12px;
+}
+
 
 hr {
     display: block;

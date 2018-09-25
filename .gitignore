@@ -2,3 +2,6 @@
 server.*
 nginx.conf
 data
+wap/subs
+wap/uploads
+images/*
