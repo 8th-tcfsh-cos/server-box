@@ -10,6 +10,18 @@ $(function(){
         var btn = document.querySelectorAll('.mat-button')[i]
         var rip = new mdc.ripple.MDCRipple(btn);
     }
+    // attach a ripple to each drawer item
+    for (var i = 0; i < document.querySelectorAll('.drawer-link').length; i++) {
+        var btn = document.querySelectorAll('.drawer-link')[i]
+        var rip = new mdc.ripple.MDCRipple(btn);
+    }
+    // attach a ripple to each material icon
+    for (var i = 0; i < document.querySelectorAll('.material-icons').length; i++) {
+        var btn = document.querySelectorAll('.material-icons')[i]
+        var rip = new mdc.ripple.MDCRipple(btn);
+        rip.unbounded=true;
+    }
+
     // const checkbox = new mdc.checkbox.MDCCheckbox(document.querySelector('.mdc-checkbox'));
     // const formField = new mdc.formField.MDCFormField(document.querySelector('.mdc-form-field'));
     // formField.input = checkbox;
