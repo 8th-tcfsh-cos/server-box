@@ -14,7 +14,7 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
-    <title>箱子</title>
+    <title>公告欄</title>
 
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
     <meta name="theme-color" content="#2196F3">
@@ -118,10 +118,10 @@
                         </div>
                     </div>
                 </div>
-                <div id="post0" class="overlay" onclick="closePost(0)">
-                    <!-- <a href="javascript:void(0)" class="overlay-closebtn" onclick="closePost(0)">&times;</a> -->
+                <div id="post0" class="overlay">
+                    <a href="javascript:void(0)" class="overlay-closebtn material-icons" onclick="closePost(0)">arrow_back</a>
                     <div class="overlay-content">
-                        <img src="/images/b0017.jpg"/>
+                        <img class="b-image" src="/images/b0017.jpg"/>
                     </div>
                 </div>
             </div>
@@ -143,14 +143,14 @@
                         </div>
                     </div>
                 </div>
-                <div id="post1" class="overlay" onclick="closePost(1)">
-                    <!-- <a href="javascript:void(0)" class="overlay-closebtn" onclick="closePost(0)">&times;</a> -->
+                <div id="post1" class="overlay">
+                    <a href="javascript:void(0)" class="overlay-closebtn material-icons" onclick="closePost(1)">arrow_back</a>
                     <!-- <div class="overlay-content zoomTarget" data-closeclick="true" data-targetsize="2" data-duration="600">
                         <img src="/images/b0016.jpg"/>
                     </div> -->
                     <!-- </div> -->
                     <div class="overlay-content">
-                        <img src="/images/b0016.jpg"/>
+                        <img class="b-image" src="/images/b0016.jpg"/>
                     </div>
                 </div>
                 <!-- <div class="zoomViewport">
@@ -202,7 +202,8 @@
 
         <!-- for image zooming -->
         <!-- <script type="text/javascript" src="/files/jquery.zoomooz.min.js"></script> -->
-        <script type="text/javascript" src="/files/zoom.js"></script>
+        <!-- <script type="text/javascript" src="/files/zoom.js"></script> -->
+        <script type="text/javascript" src="/files/jquery.zoom.min.js"></script>
 
         <!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
         <script defer src="/files/material-components-web.min.js"></script>
@@ -215,6 +216,8 @@
 
             function showPost(n) {
                 // show n-th post
+                $('body')[0].classList.add('mdc-drawer-scroll-lock');
+
                 st = document.getElementById("post"+n).style;
                 st.width = "100%";
                 st.left = "0%";
@@ -222,20 +225,35 @@
 
             /* Close when someone clicks inside the overlay */
             function closePost(n) {
-                if(is_zoomed) return;
+                $('body')[0].classList.remove('mdc-drawer-scroll-lock');
+
+                // if(is_zoomed) return;
                 st = document.getElementById("post"+n).style;
                 st.width = "0%";
                 st.left = "0%";
             }
 
             $(function(){
-                return;
                 for(var i = 0; i < $('.overlay-content').length; i++){
-                    $('.overlay-content')[i].addEventListener('click', function(event){
-                        event.preventDefault();
-                        // zoom.to({ element: event.target });
-                        zoom.to({ x: event.clientX, y:event.clientY, scale: 2 });
-                    });
+                    // $('.overlay-content')[i].addEventListener('click', function(event){
+                    //     if(is_zoomed){
+                    //         zoom.out();
+                    //         is_zoomed = false;
+                    //     } else {
+                    //         event.preventDefault();
+                    //         // zoom.to({ element: event.target });
+                    //         zoom.to({ x: event.clientX, y:event.clientY, scale: 2});
+                    //         is_zoomed = true;
+                    //     }
+                    // });
+
+                    $('.overlay-content').zoom({ on: 'grab'});
+
+                    // $('img')[i]
+                    //     .wrap('<span style="display:inline-block"></span>')
+                    //     .css('display', 'block')
+                    //     .parent()
+                    //     .zoom();
                 }
             });
         </script>

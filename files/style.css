@@ -572,16 +572,28 @@ a.card-link:hover {
 /* Position the content inside the overlay */
 .overlay-content {
     position: relative;
+    position: absolute;
     /*top: 25%;*/ /* 25% from the top */
-    width: 100%; /* 100% width */
+    /* width: 100%; */
+    width: calc(84vw + 30px);
+    height: auto;
+    margin-left: calc(8vw - 15px);
+    margin-top: auto;
     text-align: center; /* Centered text/links */
     /* margin-top: 30px;*/ /*30px top margin to avoid conflict with the close button on smaller screens */
-    height: auto;
-    margin: auto;
-    top: 50%;
+    top: calc(50%);
     transform: translateY(-50%);
-
+    overflow-y: hidden;
     vertical-align: middle;
+}
+
+.overlay-closebtn {
+    /* width: 3rem;
+    height: 3rem; */
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 20000;
 }
 
 a[role="button"].mat-button:hover {
