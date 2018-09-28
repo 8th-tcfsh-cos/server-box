@@ -7,19 +7,30 @@ $("#top-bar").load("top-bar.html");
 $(function(){
     // attach a ripple to each button
     for (var i = 0; i < document.querySelectorAll('.mat-button').length; i++) {
-        var btn = document.querySelectorAll('.mat-button')[i]
+        var btn = document.querySelectorAll('.mat-button')[i];
         var rip = new mdc.ripple.MDCRipple(btn);
     }
     // attach a ripple to each drawer item
     for (var i = 0; i < document.querySelectorAll('.drawer-link').length; i++) {
-        var btn = document.querySelectorAll('.drawer-link')[i]
+        var btn = document.querySelectorAll('.drawer-link')[i];
         var rip = new mdc.ripple.MDCRipple(btn);
     }
     // attach a ripple to each material icon
     for (var i = 0; i < document.querySelectorAll('.material-icons').length; i++) {
-        var btn = document.querySelectorAll('.material-icons')[i]
+        var btn = document.querySelectorAll('.material-icons')[i];
         var rip = new mdc.ripple.MDCRipple(btn);
         rip.unbounded=true;
+    }
+
+    for (var i = 0; i < document.querySelectorAll('.mdc-drawer__header-content').length; i++) {
+        var btn = document.querySelectorAll('.mdc-drawer__header-content')[i];
+        var rip = new mdc.ripple.MDCRipple(btn);
+        // rip.unbounded=true;
+    }
+    for (var i = 0; i < document.querySelectorAll('.an-card').length; i++) {
+        var btn = document.querySelectorAll('.an-card')[i];
+        var rip = new mdc.ripple.MDCRipple(btn);
+        // rip.unbounded=true;
     }
 
     // const checkbox = new mdc.checkbox.MDCCheckbox(document.querySelector('.mdc-checkbox'));

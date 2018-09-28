@@ -1,61 +1,60 @@
 <?php
 
+ini_set('display_errors', 1);
+
+//error handler function
+function customError($errno, $errstr) {
+  // echo "<b>Error:</b> [$errno] $errstr\n\n";
+  die("1");
+}
+
+//set error handler
+set_error_handler("customError");
+
 // Clean up all the input values(Prevent XSS, etc.)
 foreach($_POST as $key => $value) {
     $_POST[$key] = stripslashes(trim($_POST[$key]));
     $_POST[$key] = htmlspecialchars(strip_tags($_POST[$key]));
 }
 
-if (!file_exists('path/to/directory')) {
-    mkdir('path/to/directory', 0777, true);
-}
+// if (!file_exists('path/to/directory')) {
+//     mkdir('path/to/directory', 0777, true);
+// }
 
 // Assign the input values to variables
-$name = $_POST["name"];
-$email = $_POST["email"];
-$message = $_POST["message"];
 
-$target_dir = "uploads/";
-$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-$uploadOk = 1;
-$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
-    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
-    if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
-        $uploadOk = 1;
-    } else {
-        echo "File is not an image.";
-        $uploadOk = 0;
-    }
-}
-// Check if file already exists
-if (file_exists($target_file)) {
-    echo "Sorry, file already exists.";
-    $uploadOk = 0;
-}
-// Check file size
-if ($_FILES["fileToUpload"]["size"] > 500000) {
-    echo "Sorry, your file is too large.";
-    $uploadOk = 0;
-}
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
-    $uploadOk = 0;
-}
-// Check if $uploadOk is set to 0 by an error
-if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $name = $_POST["name"];
+    $groups = $_POST["groups"];
+    $sub = $_POST["submission"];
+    $captcha = $_POST["g-recaptcha-response"];
 } else {
-    if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-    } else {
-        echo "Sorry, there was an error uploading your file.";
-    }
+    // echo "Use POST to submit an entry.";
+    die("1");
+    // for debugging purposing only
+    $name = $_GET["name"];
+    $groups = $_GET["groups"];
+    $sub = $_GET["submission"];
+    $captcha = $_GET["g-recaptcha-response"];
+}
+
+// filename format: fund-HHMMSSA-DEADBEEF (random hex to avoid time collision)
+// random hex black magic WARNING: not random enough
+$filename = "subs/idea-" . date("hisa") . "-" . substr(md5(rand(0, 2147483647)), 0, 8);
+
+// verify inputs
+$inputOk = true;
+if($name == "") $inputOk = false;
+if(strlen($sub) < 20) $inputOk = false;
+if(!$inputOk){
+    // input invalid
+    // echo "$name $groups $sub";
+    die("2");
+}
+
+$has_file = true;
+if(!file_exists($_FILES['attachment']['tmp_name']) || !is_uploaded_file($_FILES['attachment']['tmp_name'])) {
+    $has_file = false;
 }
 
 // verify captcha
@@ -64,20 +63,53 @@ $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?sec
 $responseKeys = json_decode($response, true);
 if(intval($responseKeys["success"]) !== 1) {
     // captcha not verified
-    echo '<h2>You are spammer ! Get the @$%K out</h2>';
-} else {
-    //
-    echo '<h2>Thanks for posting comment.</h2>';
+    die("3");
 }
 
+$target_name = "";
+
+if($has_file){
+    $uploadOk = 1;
+
+    $target_dir = "uploads/" . $filename . '/';
+    $target_file = $target_dir . basename($_FILES["attachment"]["name"]);
+
+    // create a new path for new upload
+    mkdir($target_dir, 0777, true);
+
+    // Check file size (<= 20 MiB)
+    if ($_FILES["attachment"]["size"] > 1048576 * 20) {
+        // echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        // echo "Sorry, your file was not uploaded.";
+        die("4");
+    // if everything is ok, try to upload file
+    } else {
+        if (move_uploaded_file($_FILES["attachment"]["tmp_name"], $target_file)) {
+            // echo "The file ". basename( $_FILES["attachment"]["name"]). " has been uploaded.";
+        } else {
+            // echo "Sorry, there was an error uploading your file.";
+            die("4");
+        }
+    }
+}
+
+// create new file
+$file = fopen($filename, "w");
+$txt = "Name: " . $name;
+fwrite($file, $txt . "\n\n");
+$txt = "Recipient(s): " . $groups;
+fwrite($file, $txt . "\n\n");
+$txt = "Uploaded file: " . $has_file;
+fwrite($file, $txt . "\n\n");
+$txt = "Submission:\n\n" . $sub;
+fwrite($file, $txt);
+fclose($file);
+
 // Die with a success message
-die("<span class='success'>Success! Your message has been sent.</span>");
-
-
-// A function that checks to see if
-// an email is valid
-function validEmail($email) { return true; }
-
-
+die("0");
 
 ?>

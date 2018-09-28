@@ -72,9 +72,13 @@
         </div>
 
         <div id="tmp-error" style="display: none;">
-            <div id="submitted" class="alert alert-dismissible alert-danger">
+            <div id="n-submitted" class="alert alert-dismissible alert-danger">
                 <button type="button" class="close" data-dismiss="alert">&times;</button>
-                伺服器遇到困難，請稍候重試或聯絡管理員。
+                無法提交表單，伺服器傳回以下錯誤：
+                <br>
+                <div id="error-log">
+                    <!-- for error log -->
+                </div>
             </div>
         </div>
 
@@ -346,13 +350,16 @@
                     // url = $form.attr('action');
 
                 var sent = false;
+                var timeout = false;
 
                 setTimeout(function(){
                     // if server didn't respond in 10 secs
                     if(!sent){
                         submitForm();
                         closeOverlay();
+                        document.getElementById('error-log').innerHTML = "504 Gateway Timeout";
                         document.getElementById('status').innerHTML = document.getElementById('tmp-error').innerHTML;
+                        timeout = true;
                     }
                 }, 10000);
 
@@ -362,13 +369,30 @@
                 /* Put the results in a div */
                 posting.done(function(data) {
                     sent = true
+                    if(timeout) return;
                     // $("#result").empty().append(data);
                     submitForm();
                     closeOverlay();
-                    if(data == '1'){
+                    if(data == '0'){
                         // show success nofification
                         document.getElementById('status').innerHTML = document.getElementById('tmp-success').innerHTML;
                     } else {
+                        // print error log
+                        var errmsg = "";
+                        switch(data) {
+                            case "1":
+                                errmsg = "500 Internal Server Error. This is probably a server-side bug, please try again or contact the developer.";
+                                break;
+                            case "2":
+                                errmsg = "Invalid input.";
+                                break;
+                            case "3":
+                                errmsg = "Captcha not verified.";
+                                break;
+                            default:
+                                errmsg = "Unknown Error. This is definitely a bug, please try again or contact the developer.";
+                        }
+                        document.getElementById('error-log').innerHTML = errmsg;
                         // show error nofification
                         document.getElementById('status').innerHTML = document.getElementById('tmp-error').innerHTML;
                     }
