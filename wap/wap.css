@@ -37,6 +37,11 @@ a:hover {
     border-radius: 2px;
     box-shadow: 0px 2px 4px black;
 }
+.alert.alert-danger {
+    background-color: #E74C3C;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px black;
+}
 .alert-primary {
     background-color: #2399F7;
 }
@@ -46,4 +51,14 @@ a:hover {
 }
 .alert .close:not(:hover) {
     opacity: 0.6;
+}
+
+
+.purple-button.mdc-button--raised, .purple-button.mdc-button--unelevated, .purple-button.mdc-button--outlined:after, .purple-button.mdc-button--outlined:before {
+    background-color: #AB47BC !important;
+    color: #fff !important;
+}
+.purple-button.mdc-button--outlined {
+    border-color: #AB47BC !important;
+    color: #AB47BC !important;
 }

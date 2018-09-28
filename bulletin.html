@@ -56,12 +56,11 @@
             </div>
         </div>
 
-        <section style="margin-top: 3rem;">
+        <section style="margin-top: 2.2rem; margin-bottom: 1.4rem;">
             <p>
                 在購置主機之前，本版更新會較慢，敬請見諒。
             </p>
             <hr>
-            <br>
         </section>
 
         <!-- hidden for now -->
@@ -98,7 +97,7 @@
 
         <div class="row">
             <div class="col-lg-4">
-                <div class="card mb-3">
+                <div class="card mb-3 an-card mdc-ripple-surface">
                     <div class="card-header">
                         最新公告
                     </div>
@@ -108,7 +107,7 @@
                             <h6 class="card-subtitle mb-2 text-muted">Sept. 25, 2018</h6>
                             <p class="card-text">恭喜「人生就好像做夢一般」獲選為本屆成果發表會之影片故事！</p>
                             <button class="mat-button card-button-ok mdc-button mdc-card__action mdc-card__action--button" onClick="showPost(0)">Info</button>
-                            <a role="button" class="mat-button card-button-ok mdc-button mdc-card__action mdc-card__action--button" href="/wap/story.pdf" target="_blank">View</a>
+                            <a role="button" class="mat-button card-button-ok mdc-button mdc-card__action mdc-card__action--button" href="/wap/story.pdf" download>Download</a>
                             <!-- <a href="" class="card-link">Read</a> -->
                             <!-- <div class="mdc-chip-set">
                                 <div class="mdc-chip" tabindex="0">
@@ -119,14 +118,15 @@
                     </div>
                 </div>
                 <div id="post0" class="overlay">
-                    <a href="javascript:void(0)" class="overlay-closebtn material-icons" onclick="closePost(0)">arrow_back</a>
+                    <a href="javascript:void(0)" class="overlay-closebtn material-icons" onclick="closePost(0)">close</a>
                     <div class="overlay-content">
                         <img class="b-image" src="/images/b0017.jpg"/>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card mb-3">
+                <div class="card mb-3 an-card  mdc-ripple-surface">
+                    <!-- <div class="card-header">
+                        &nbsp;
+                    </div> -->
                     <div class="card-body">
                         <div>
                             <h4 class="card-title">成年禮暨誓師大會</h4>
@@ -144,7 +144,7 @@
                     </div>
                 </div>
                 <div id="post1" class="overlay">
-                    <a href="javascript:void(0)" class="overlay-closebtn material-icons" onclick="closePost(1)">arrow_back</a>
+                    <a href="javascript:void(0)" class="overlay-closebtn material-icons" onclick="closePost(1)">close</a>
                     <!-- <div class="overlay-content zoomTarget" data-closeclick="true" data-targetsize="2" data-duration="600">
                         <img src="/images/b0016.jpg"/>
                     </div> -->
@@ -153,30 +153,52 @@
                         <img class="b-image" src="/images/b0016.jpg"/>
                     </div>
                 </div>
-                <!-- <div class="zoomViewport">
-                    <div class="zoomContainer">
-                        <div class="zoomTarget">Target 1</div>
-                        <div class="zoomTarget">Target 2</div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-3 an-card mdc-ripple-surface">
+                    <div class="card-body">
+                        <div>
+                            <h4 class="card-title">Placeholder announcement</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <button class="mat-button card-button-ok mdc-button mdc-card__action mdc-card__action--button">button</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3 an-card mdc-ripple-surface">
+                    <div class="card-body">
+                        <div>
+                            <h4 class="card-title">Placeholder announcement</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <button class="mat-button card-button-ok mdc-button mdc-card__action mdc-card__action--button">button</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="card mb-3 an-card mdc-ripple-surface">
+                    <div class="card-body">
+                        <div>
+                            <h4 class="card-title">Placeholder announcement</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <button class="mat-button card-button-ok mdc-button mdc-card__action mdc-card__action--button">button</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="card mb-3 an-card mdc-ripple-surface">
+                    <div class="card-body">
+                        <div>
+                            <h4 class="card-title">Placeholder announcement</h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Subtitle</h6>
+                            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <button class="mat-button card-button-ok mdc-button mdc-card__action mdc-card__action--button">button</button>
+                        </div>
                     </div>
                 </div> -->
             </div>
         </div>
-
-        <!-- <div class="card border-primary mb-3">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-                <h4 class="card-title">Primary card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-            </div>
-        </div>
-        <div class="card border-primary mb-3">
-            <div class="card-header">Header</div>
-            <div class="card-body">
-                <h4 class="card-title">Primary card title</h4>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <button class="mat-button mdc-button mdc-card__action mdc-card__action--button">Read</button>
-            </div>
-        </div> -->
 
         <!-- <div id="announcement-container" style="display: none;">
             <hr>
@@ -254,6 +276,24 @@
                     //     .css('display', 'block')
                     //     .parent()
                     //     .zoom();
+                }
+
+                // add elevation to all cards
+                for(var i = 0; i < document.querySelectorAll('.an-card').length; i++){
+                    var c = document.querySelectorAll('.an-card')[i];
+                    // default elevation
+                    c.classList.add('mdc-elevation--z4');
+
+                    // more elevation when hovered
+                    c.addEventListener("mouseover", function(e){
+                        this.classList.remove('mdc-elevation--z4');
+                        this.classList.add('mdc-elevation--z10');
+                    });
+                    c.addEventListener("mouseleave", function(e){
+                        this.classList.remove('mdc-elevation--z10');
+                        this.classList.add('mdc-elevation--z4');
+                    });
+
                 }
             });
         </script>

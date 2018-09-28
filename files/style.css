@@ -120,6 +120,7 @@ p {
 
 .purple-button.mdc-button--raised, .purple-button.mdc-button--unelevated, .purple-button.mdc-button--outlined:after, .purple-button.mdc-button--outlined:before {
     background-color: #AB47BC !important;
+    color: #fff !important;
 }
 .purple-button.mdc-button--outlined {
     border-color: #AB47BC !important;
@@ -587,13 +588,23 @@ a.card-link:hover {
     vertical-align: middle;
 }
 
-.overlay-closebtn {
+/* The navigation links inside the overlay */
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block; /* Display block instead of inline */
+    transition: 0.3s; /* Transition effects on hover (color) */
+}
+.overlay .overlay-closebtn {
     /* width: 3rem;
     height: 3rem; */
     position: absolute;
     top: 0;
     right: 0;
     z-index: 20000;
+    font-size: 1.8rem;
 }
 
 a[role="button"].mat-button:hover {
@@ -608,15 +619,6 @@ a[role="button"].mat-button:hover {
     left: calc(38% - 40px);
 }
 
-/* The navigation links inside the overlay */
-.overlay a {
-    padding: 8px;
-    text-decoration: none;
-    font-size: 36px;
-    color: #818181;
-    display: block; /* Display block instead of inline */
-    transition: 0.3s; /* Transition effects on hover (color) */
-}
 
 .overlay-content > img {
     object-fit: scale-down;
@@ -638,6 +640,10 @@ a[role="button"].mat-button:hover {
 }
 
 .material-icons {
+    padding: 12px;
+    border-radius: 50%;
+}
+a.material-icons {
     padding: 12px;
 }
 
