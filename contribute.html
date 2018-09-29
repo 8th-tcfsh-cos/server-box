@@ -15,7 +15,7 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
-    <title>TCFSH COS</title>
+    <title>幫助我們</title>
 
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
     <meta name="theme-color" content="#2196F3">
@@ -24,11 +24,11 @@
     <link rel="stylesheet" href="/files/material-components-web.min.css"/>
     <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-blue.min.css"/> -->
     <!-- <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css"/> -->
-    
+
 
     <link rel="stylesheet" href="/files/bootstrap.css" media="screen">
     <link rel="stylesheet" href="/files/custom.min.css">
-    <link rel="stylesheet" href="/files/style.css">
+    <link rel="stylesheet" href="/files/style.css?v=1.0">
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
 
     <!-- Nice fonts -->
@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="page-header">
-                        Contribute
+                        幫助我們
                     </div>
                 </div>
             </div>
@@ -56,34 +56,77 @@
 
         <section class="page-section">
             <p>
-                As you can see, this website is completely incomplete(?), and we are still putting a lot of effort into costructing the project. However, you may want to contribute to it by the following manners:
+                你希望台中一中的第八屆科學班成發有自己的網站嗎？你想讓之後每屆科學班都能有自己的網站嗎？那就加入我們的合資，讓 TCFSH COS 有自己專屬的 web server (還有網域) 吧！
             </p>
         </section>
 
         <section class="page-section">
             <h2 class="section-title">
-                Donation
+                為什麼要這樣做？
             </h2>
             <p>
-                You can donate money directly to the 322 class via cash. This greatly assists us in improving our individual researches. In addition, we are looking forward to having our own web server and domain.
+                我之前做的成發箱子是發佈在 <a href="https://pages.github.com">Github Pages</a> 上的靜態網頁，但是作為一個箱子沒有後端是很詭異的事 (?)，於是做了一個有 PHP 後端的版本。目前此版本的箱子改為架設於台灣的 <a href="https://cloud.google.com/compute">Google Cloud VPS</a> 上，但出現了各種更新不方便、效能不足等問題。我非常希望能購買自己的主機，這樣不但更新迅速 (我就睡在他旁邊)，而且效能比起各大 web hosting 服務也是...呃...屌虐 (?
+            </p>
+            <p>
+                And by 屌虐 I mean
+            </p>
+            <table class="table table-hover table-centered">
+                <thead>
+                    <tr>
+                        <th scope="col">項目</th>
+                        <th scope="col">Amazon t1-micro</th>
+                        <th scope="col">Google g1-small</th>
+                        <th scope="col">ASUS Tinker Board S</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">CPU</th>
+                        <td class="text-muted">1 vCPU</td>
+                        <td class="text-muted">0.2 vCPUs</td>
+                        <td>RK3288&times;4 @1.8GHz</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">RAM</th>
+                        <td class="text-muted">0.6 GB</td>
+                        <td class="text-muted">1.7 GB</td>
+                        <td>2 GB</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">GPU</th>
+                        <td class="text-muted">-</td>
+                        <td class="text-muted">-</td>
+                        <td>ARM Mali&times;4 @600MHz</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">網路頻寬 <span class="text-muted">*</span></th>
+                        <td class="text-muted">70 Mbps</td>
+                        <td class="text-muted">100 Mbps</td>
+                        <td>宿網 (>1000 Mbps)</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">約略價格</th>
+                        <td class="text-muted">NT$ 7500 / yr</td>
+                        <td class="text-muted">NT$ 4700 / yr</td>
+                        <td>NT$ 3000 (+SD卡)</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-muted" style="text-align: right; font-size: 0.7rem;">
+                * 理論值。惟 AWS 官方並未提供頻寬資料，此處使用 cloudonaut.io 之實驗結果。
+            </div>
+            <br>
+            <p>
+                而且，他除了當成發網站以外，各種網站功能都可以在上面實現<s class="text-muted">，例如作業抄寫平台之類的</s>。
             </p>
         </section>
 
         <section class="page-section">
             <h2 class="section-title">
-                Composition
+                可是我沒有錢
             </h2>
             <p>
-                --INCOMPLETE--
-            </p>
-        </section>
-
-        <section class="page-section">
-            <h2 class="section-title">
-                Development
-            </h2>
-            <p>
-                --INCOMPLETE--
+                那你可以當<s class="text-muted">免費勞工</s>網站開發員或設計師，而且假設我沒有把學測考爛掉 (或選訓考太好)，我應該會教一些人 (包括學弟妹們) 架設網站。
             </p>
         </section>
 
@@ -92,11 +135,11 @@
         </footer>
 
         <script type="text/javascript" src="/files/jquery.min.js"></script>
-        <script type="text/javascript" src="/files/build.js"></script>
+        <script type="text/javascript" src="/files/build.js?v=1"></script>
 
         <script type="text/javascript" src="/files/popper.min.js"></script>
         <script type="text/javascript" src="/files/bootstrap.min.js"></script>
-        
+
 
         <!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
         <script defer src="/files/material-components-web.min.js"></script>

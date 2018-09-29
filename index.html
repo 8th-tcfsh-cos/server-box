@@ -27,7 +27,7 @@
 
     <link rel="stylesheet" href="/files/bootstrap.css" media="screen">
     <link rel="stylesheet" href="/files/custom.min.css">
-    <link rel="stylesheet" href="/files/style.css">
+    <link rel="stylesheet" href="/files/style.css?v=1.0">
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
 
     <!-- Nice fonts -->
@@ -55,11 +55,12 @@
             </div>
         </div>
 
-        <section style="margin-top: 3rem;">
-            <p>
-                我是台中一中 0822 的箱子(台灣正式服)。本箱子目前架設於 Google Cloud VPS ，而開發者希望能架設於自己的主機上，也能有自己的網域(這開發者還真貪心)。目前網站前後端皆由其獨自一人完成，並希望以後的台中一中科學班都能有自己的網頁，所以正在募資買伺服器主機中。
-            </p>
-            <br>
+        <div id="n-submitted" class="alert alert-dismissible alert-success"style="margin-top: 1.5rem;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            我們正在募資購買伺服器主機中！<a href="/contribute.html">查看詳情</a>
+        </div>
+
+        <section style="margin-top: 2rem;">
             <button type="button" class="mat-button mdc-button mdc-button--raised blue-button" onClick="window.location='wap/index.html'">
                 成發區
             </button>
@@ -87,7 +88,7 @@
         </footer>
 
         <script type="text/javascript" src="/files/jquery.min.js"></script>
-        <script type="text/javascript" src="/files/build.js"></script>
+        <script type="text/javascript" src="/files/build.js?v=1"></script>
 
         <script type="text/javascript" src="/files/popper.min.js"></script>
         <script type="text/javascript" src="/files/bootstrap.min.js"></script>
