@@ -70,10 +70,6 @@ p {
     outline: none;
 }
 
-.mat-button.mdc-dialog__footer__button--cancel {
-    color: #606060;
-}
-
 /* A series of button colors */
 .red-button.mdc-button--raised, .red-button.mdc-button--unelevated, .red-button.mdc-button--outlined:after, .red-button.mdc-button--outlined:before {
     background-color: #E74C3C !important;
@@ -725,26 +721,32 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
     font-feature-settings: "liga" 0;
 }
 
-.mdc-drawer--temporary .mdc-drawer__drawer {
+.mdc-drawer .mdc-drawer__drawer {
     box-shadow: 4px 0px 10px rgba(0,0,0,.2), 8px 0px 16px rgba(0,0,0,.4);
 }
 .mdc-drawer__content {
     background-color: #222;
     color: #ddd;
 }
-.mdc-drawer--temporary .mdc-list-item {
+.mdc-drawer .mdc-list-item {
     color: #ddd;
+    margin: 0.5rem;
+    border-radius: 4px;
 }
-.mdc-drawer--temporary .mdc-list-item::before, .mdc-drawer--temporary .mdc-list-item::after {
+.mdc-drawer .mdc-list-item::before, .mdc-drawer .mdc-list-item::after {
     background-color: #aaa;
 }
-.mdc-drawer--temporary .mdc-list-item:not(.mdc-list-item-active):hover {
+.mdc-drawer .mdc-list-item:not(.mdc-list-item-active):hover {
     background-color: #242424;
 }
 .mdc-list-item.mdc-list-item-active {
     /* color: blue; */
-    background-color: #343434;
+    background-color: #404040;
     color: #fff;
+}
+.mdc-drawer .mdc-list {
+    margin: 0;
+    padding: 0;
 }
 
 .table thead th, .table tbody td, .table tbody th {
@@ -779,6 +781,38 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
 }
 .alert a:hover {
     opacity: .6;
+}
+.alert.alert-success, .alert.alert-success a {
+    /* color: #222; */
+}
+
+.mdc-dialog .mdc-dialog__surface {
+    background-color: #333;
+}
+.mdc-dialog .mdc-dialog__header__title {
+    color: #fff;
+}
+.mdc-dialog .mdc-dialog__body {
+    color: #ddd;
+}
+.mdc-dialog .mdc-dialog__footer__button--cancel {
+    color: #888;
+}
+
+.mdc-drawer__header-content {
+    font-weight: bold;
+}
+.mdc-drawer::before {
+    background-color: rgba(0,0,0,.4);
+}
+
+body.mdc-drawer-scroll-lock .page-content, body.mdc-dialog-scroll-lock .page-content,
+body.mdc-drawer-scroll-lock .mdc-top-app-bar, body.mdc-dialog-scroll-lock .mdc-top-app-bar {
+    filter: blur(4px);
+}
+
+li {
+    margin-bottom: 0.25rem;
 }
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {

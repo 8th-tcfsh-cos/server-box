@@ -7,9 +7,32 @@ $("#top-bar").load("/top-bar.html");
 $(function(){
     // attach a ripple to each button
     for (var i = 0; i < document.querySelectorAll('.mat-button').length; i++) {
-        var btn = document.querySelectorAll('.mat-button')[i]
+        var btn = document.querySelectorAll('.mat-button')[i];
         var rip = new mdc.ripple.MDCRipple(btn);
     }
+    // attach a ripple to each drawer item
+    for (var i = 0; i < document.querySelectorAll('.drawer-link').length; i++) {
+        var btn = document.querySelectorAll('.drawer-link')[i];
+        var rip = new mdc.ripple.MDCRipple(btn);
+    }
+    // attach a ripple to each material icon
+    for (var i = 0; i < document.querySelectorAll('.material-icons').length; i++) {
+        var btn = document.querySelectorAll('.material-icons')[i];
+        var rip = new mdc.ripple.MDCRipple(btn);
+        rip.unbounded=true;
+    }
+
+    for (var i = 0; i < document.querySelectorAll('.mdc-drawer__header-content').length; i++) {
+        var btn = document.querySelectorAll('.mdc-drawer__header-content')[i];
+        var rip = new mdc.ripple.MDCRipple(btn);
+        // rip.unbounded=true;
+    }
+    for (var i = 0; i < document.querySelectorAll('.an-card').length; i++) {
+        var btn = document.querySelectorAll('.an-card')[i];
+        var rip = new mdc.ripple.MDCRipple(btn);
+        // rip.unbounded=true;
+    }
+
     // const checkbox = new mdc.checkbox.MDCCheckbox(document.querySelector('.mdc-checkbox'));
     // const formField = new mdc.formField.MDCFormField(document.querySelector('.mdc-form-field'));
     // formField.input = checkbox;
@@ -27,7 +50,9 @@ $(function(){
 
     const topAppBarElement = document.querySelector('.mdc-top-app-bar');
     let drawer = new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-drawer--temporary'));
-    $('#menu-icon')[0].addEventListener('click', () => drawer.open = true);
+    $('#menu-icon')[0].addEventListener('click', function(){
+        drawer.open = true;
+    });
 
     // function to get filename from a path
     function get_filename(s){

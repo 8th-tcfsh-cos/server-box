@@ -13,7 +13,7 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
-    <title>403 Forbidden</title>
+    <title>50X Server Error</title>
 
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
     <meta name="theme-color" content="#E74C3C">
@@ -47,7 +47,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="page-header">
-                        403 Forbidden
+                        50X Server Error
                     </div>
                 </div>
             </div>
@@ -55,33 +55,62 @@
 
         <section style="margin-top: 3rem;">
             <p>
-                你沒有權限存取此頁。伺服器已接收並了解你的請求，但是拒絕提供服務。<a href="/index.html">回到首頁</a>
+                伺服器爆炸了。請稍候重試，<a href="/index.html">回到首頁</a>或是聯絡管理員。
             </p>
-            <button id="dont-click-button" type="button" class="mat-button mdc-button mdc-button--raised red-button" onClick="errorr();">
-                不要按
-            </button>
+        </section>
+
+        <section class="page-section" style="margin-top: 3rem;">
+            <h2 class="section-title">
+                發生了什麼事？
+            </h2>
+            <p>
+                如果不是因為我們的伺服器是馬鈴薯串成的，就是以下某一件事發生了：
+            </p>
+            <ol style="font-size: 1rem;">
+                <li>
+                    <strong>
+                        500 Internal server error
+                    </strong>
+                    &nbsp;&nbsp;我也不知道發生了什麼
+                </li>
+                <li>
+                    <strong>
+                        501 Not implemented
+                    </strong>
+                    &nbsp;&nbsp;你傳送了 server 看不懂的要求。
+                </li>
+                <li>
+                    <strong>
+                        502 Bad gateway; 504 Gateway Timeout
+                    </strong>
+                    &nbsp;&nbsp;你連線到了 gateway 但是他覺得伺服器爆了。
+                </li>
+                <li>
+                    <strong>
+                        200 OK
+                    </strong>
+                    &nbsp;&nbsp;你在網址列輸入了 <a href="/50x-error.html">https://cos.tcfsh.tk/50x-error.html</a> 。
+                </li>
+                <li>
+                    <strong>
+                        503 Service unavailable
+                    </strong>
+                    &nbsp;&nbsp;字面上的意思
+                </li>
+                <li>
+                    <strong>
+                        501 Insufficient storage
+                    </strong>
+                    &nbsp;&nbsp;也是字面上的意思 (我絕對沒有懶得打)
+                </li>
+            </ol>
         </section>
 
         <footer id="footer">
             <!-- will be loaded later -->
         </footer>
+
     </div>
-    <aside id="dont-click-dialog" class="mdc-dialog">
-        <div class="mdc-dialog__surface">
-            <header class="mdc-dialog__header">
-                <h2 id="dont-click-dialog-label" class="mdc-dialog__header__title">
-                    ???
-                </h2>
-            </header>
-            <section id="dont-click-dialog-description" class="mdc-dialog__body">
-                就叫你不要按
-            </section>
-            <footer class="mdc-dialog__footer">
-                <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept" onClick="window.location='https://www.youtube.com/watch?v=KYniUCGPGLs'">沙毀</button>
-            </footer>
-        </div>
-        <div class="mdc-dialog__backdrop"></div>
-    </aside>
 
     <script type="text/javascript" src="/files/jquery.min.js"></script>
     <script type="text/javascript" src="/files/build-fallback.js?v=1"></script>
@@ -90,11 +119,6 @@
     <script type="text/javascript" src="/files/bootstrap.min.js"></script>
 
     <script defer src="/files/material-components-web.min.js"></script>
-    <script>
-    function errorr(){
-        var dont_click_dialog = new mdc.dialog.MDCDialog(document.querySelector('#dont-click-dialog'));
-        dont_click_dialog.show();
-    }
-    </script>
+
 </body>
 </html>

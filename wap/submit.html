@@ -29,8 +29,8 @@
 
     <link rel="stylesheet" href="/files/bootstrap.css" media="screen">
     <link rel="stylesheet" href="/files/custom.min.css">
-    <link rel="stylesheet" href="/files/style.css?v=1.0">
-    <link rel="stylesheet" href="./wap.css?v=1.0">
+    <link rel="stylesheet" href="/files/style.css?v=1.1">
+    <link rel="stylesheet" href="./wap.css?v=1.1">
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
 
     <!-- Nice fonts -->
@@ -197,454 +197,457 @@
                 <!-- &nbsp; -->
                 <button id="reset-button" type="button" class="mat-button mdc-button mdc-button--raised gray-button" onClick="resetForm()">清除</button>
             </div>
-            <aside id="confirm-submission-dialog" class="mdc-dialog">
-                <div class="mdc-dialog__surface">
-                    <header class="mdc-dialog__header">
-                        <h2 id="confirm-submission-dialog-label" class="mdc-dialog__header__title">
-                            確認上傳
-                        </h2>
-                    </header>
-                    <section id="confirm-submission-dialog-description" class="mdc-dialog__body">
-                        確定要提交這些內容?
-                    </section>
-                    <footer class="mdc-dialog__footer">
-                        <button type="submit" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">確定</button>
-                        <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">取消</button>
-                    </footer>
-                </div>
-                <div class="mdc-dialog__backdrop"></div>
-            </aside>
         </form>
-
-        <aside id="form-incomplete-dialog" class="mdc-dialog">
-            <div class="mdc-dialog__surface">
-                <header class="mdc-dialog__header">
-                    <h2 id="form-incomplete-dialog-label" class="mdc-dialog__header__title">
-                        表單未完成
-                    </h2>
-                </header>
-                <section id="form-incomplete-dialog-description" class="mdc-dialog__body">
-                    請確認你有正確的填完此表單。
-                </section>
-                <footer class="mdc-dialog__footer">
-                    <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">確定</button>
-                </footer>
-            </div>
-            <div class="mdc-dialog__backdrop"></div>
-        </aside>
-
-        <aside id="not-robot-dialog" class="mdc-dialog">
-            <div class="mdc-dialog__surface">
-                <header class="mdc-dialog__header">
-                    <h2 id="not-robot-dialog-label" class="mdc-dialog__header__title">
-                        你484機器人?
-                    </h2>
-                </header>
-                <section id="not-robot-dialog-description" class="mdc-dialog__body">
-                    就算是也請按「我不是機器人」。
-                </section>
-                <footer class="mdc-dialog__footer">
-                    <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">4</button>
-                    <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">84</button>
-                </footer>
-            </div>
-            <div class="mdc-dialog__backdrop"></div>
-        </aside>
-
-        <div id="sending-overlay" class="overlay" style="height: 0%; width: 100%;">
-            <!-- <a href="javascript:void(0)" class="overlay-closebtn" onclick="closePost(0)">&times;</a> -->
-            <div class="overlay-content">
-                <p>
-                    資料傳送中
-                </p>
-                <!-- progress bar -->
-                <div id="sending-bar">
-
-                </div>
-                <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
-                    <div class="mdc-linear-progress__buffering-dots"></div>
-                    <div class="mdc-linear-progress__buffer"></div>
-                    <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
-                        <span class="mdc-linear-progress__bar-inner"></span>
-                    </div>
-                    <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
-                        <span class="mdc-linear-progress__bar-inner"></span>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <footer id="footer">
             <!-- will be loaded using javascript -->
         </footer>
 
-        <script type="text/javascript" src="/files/jquery.min.js"></script>
-        <script type="text/javascript" src="/files/build.js?v=1"></script>
+    </div>
 
-        <script type="text/javascript" src="/files/popper.min.js"></script>
-        <script type="text/javascript" src="/files/bootstrap.min.js"></script>
+    <aside id="confirm-submission-dialog" class="mdc-dialog mdc-elevation--z6">
+        <div class="mdc-dialog__surface">
+            <header class="mdc-dialog__header">
+                <h2 id="confirm-submission-dialog-label" class="mdc-dialog__header__title">
+                    確認上傳
+                </h2>
+            </header>
+            <section id="confirm-submission-dialog-description" class="mdc-dialog__body">
+                確定要提交這些內容?
+            </section>
+            <footer class="mdc-dialog__footer">
+                <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept" onclick="$('#sub-form').submit()">確定</button>
+                <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">取消</button>
+            </footer>
+        </div>
+        <div class="mdc-dialog__backdrop"></div>
+    </aside>
+
+    <aside id="form-incomplete-dialog" class="mdc-dialog mdc-elevation--z6">
+        <div class="mdc-dialog__surface">
+            <header class="mdc-dialog__header">
+                <h2 id="form-incomplete-dialog-label" class="mdc-dialog__header__title">
+                    表單未完成
+                </h2>
+            </header>
+            <section id="form-incomplete-dialog-description" class="mdc-dialog__body">
+                請確認你有正確的填完此表單。
+            </section>
+            <footer class="mdc-dialog__footer">
+                <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">確定</button>
+            </footer>
+        </div>
+        <div class="mdc-dialog__backdrop"></div>
+    </aside>
+
+    <aside id="not-robot-dialog" class="mdc-dialog mdc-dialog mdc-elevation--z6">
+        <div class="mdc-dialog__surface">
+            <header class="mdc-dialog__header">
+                <h2 id="not-robot-dialog-label" class="mdc-dialog__header__title">
+                    你484機器人?
+                </h2>
+            </header>
+            <section id="not-robot-dialog-description" class="mdc-dialog__body">
+                就算是也請按「我不是機器人」。
+            </section>
+            <footer class="mdc-dialog__footer">
+                <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept">4</button>
+                <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--cancel">84</button>
+            </footer>
+        </div>
+        <div class="mdc-dialog__backdrop"></div>
+    </aside>
+
+    <div id="sending-overlay" class="overlay" style="height: 0%; width: 100%;">
+        <!-- <a href="javascript:void(0)" class="overlay-closebtn" onclick="closePost(0)">&times;</a> -->
+        <div class="overlay-content">
+            <p>
+                資料傳送中
+            </p>
+            <!-- progress bar -->
+            <div id="sending-bar">
+
+            </div>
+            <div role="progressbar" class="mdc-linear-progress mdc-linear-progress--indeterminate">
+                <div class="mdc-linear-progress__buffering-dots"></div>
+                <div class="mdc-linear-progress__buffer"></div>
+                <div class="mdc-linear-progress__bar mdc-linear-progress__primary-bar">
+                    <span class="mdc-linear-progress__bar-inner"></span>
+                </div>
+                <div class="mdc-linear-progress__bar mdc-linear-progress__secondary-bar">
+                    <span class="mdc-linear-progress__bar-inner"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="/files/jquery.min.js"></script>
+    <script type="text/javascript" src="/files/build.js?v=1"></script>
+
+    <script type="text/javascript" src="/files/popper.min.js"></script>
+    <script type="text/javascript" src="/files/bootstrap.min.js"></script>
 
 
-        <!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
-        <script defer src="/files/material-components-web.min.js"></script>
-        <!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
-        <!-- <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
-        <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
+    <!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
+    <script defer src="/files/material-components-web.min.js"></script>
+    <!-- <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script> -->
+    <!-- <script defer src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script> -->
 
-        <!-- recaptcha -->
-        <script src='https://www.google.com/recaptcha/api.js?hl=zh-TW'></script>
+    <!-- recaptcha -->
+    <script src='https://www.google.com/recaptcha/api.js?hl=zh-TW'></script>
 
-        <script>
-            // preventing enter key from submitting the form
-            $(document).on("keypress", ":input:not(textarea)", function(event) {
-                return event.keyCode != 13;
-            });
+    <script>
+        // preventing enter key from submitting the form
+        $(document).on("keypress", ":input:not(textarea)", function(event) {
+            return event.keyCode != 13;
+        });
 
-            function showOverlay() {
-                // show 'sending form' overlay
-                st = document.getElementById("sending-overlay").style;
-                st.height = "100%";
+        function showOverlay() {
+            // show 'sending form' overlay
+            st = document.getElementById("sending-overlay").style;
+            st.height = "100%";
 
-                // const bar = $('.mdc-linear-progress')[0];
-                //
-                // // const MDCLinearProgress = new mdc.linearProgress.MDCLinearProgress;
-                // // const MDCLinearProgressFoundation = new mdc.linearProgress.MDCLinearProgressFoundation;
-                //
-                // const progress = new mdc.linearProgress.MDCLinearProgress(bar);
-                //
-                // // progressFoundation.setDeterminate(false);
-                // progress.progress = 1;
+            // const bar = $('.mdc-linear-progress')[0];
+            //
+            // // const MDCLinearProgress = new mdc.linearProgress.MDCLinearProgress;
+            // // const MDCLinearProgressFoundation = new mdc.linearProgress.MDCLinearProgressFoundation;
+            //
+            // const progress = new mdc.linearProgress.MDCLinearProgress(bar);
+            //
+            // // progressFoundation.setDeterminate(false);
+            // progress.progress = 1;
 
-                // $('#sending-bar')[0].innerHTML = $('#loading-bar')[0].innerHTML;
+            // $('#sending-bar')[0].innerHTML = $('#loading-bar')[0].innerHTML;
+        }
+
+        function closeOverlay() {
+            st = document.getElementById("sending-overlay").style;
+            st.height = "0%";
+        }
+
+        // update custom file button
+        function uploadOnChange(e) {
+            var upload_button = document.getElementById('upload-button1');
+            if(e.value == ""){
+                // document.getElementById('filename1').innerHTML = "沒有東西";
+                document.getElementById('filename1').innerHTML = "";
+                upload_button.innerHTML = "選擇檔案";
+                upload_button.className = "mat-button mdc-button mdc-button--raised gray-button";
+                mdc.ripple.MDCRipple.attachTo(upload_button);
+                return false;
             }
 
-            function closeOverlay() {
-                st = document.getElementById("sending-overlay").style;
-                st.height = "0%";
+            if(e.files[0].size > 1048576 * 20){
+                document.getElementById('filename1').innerHTML = "檔案過大! 你可以改為將其上傳到別的地方並把連結貼在文字框內。";
+                upload_button.innerHTML = "選擇檔案";
+                upload_button.className = "mat-button mdc-button mdc-button--raised red-button";
+                mdc.ripple.MDCRipple.attachTo(upload_button);
+                e.value = "";
+                return false;
+            };
+
+            var filename = e.value;
+            var lastIndex = filename.lastIndexOf("\\");
+            if (lastIndex >= 0) {
+                filename = filename.substring(lastIndex +1);
+                document.getElementById('filename1').innerHTML = filename;
+                upload_button.innerHTML = "換一個檔案";
+                upload_button.className = "mat-button mdc-button mdc-button--raised green-button";
+                mdc.ripple.MDCRipple.attachTo(upload_button);
             }
+        }
 
-            // update custom file button
-            function uploadOnChange(e) {
-                var upload_button = document.getElementById('upload-button1');
-                if(e.value == ""){
-                    // document.getElementById('filename1').innerHTML = "沒有東西";
-                    document.getElementById('filename1').innerHTML = "";
-                    upload_button.innerHTML = "選擇檔案";
-                    upload_button.className = "mat-button mdc-button mdc-button--raised gray-button";
-                    mdc.ripple.MDCRipple.attachTo(upload_button);
-                    return false;
-                }
-
-                if(e.files[0].size > 1048576 * 20){
-                    document.getElementById('filename1').innerHTML = "檔案過大! 你可以改為將其上傳到別的地方並把連結貼在文字框內。";
-                    upload_button.innerHTML = "選擇檔案";
-                    upload_button.className = "mat-button mdc-button mdc-button--raised red-button";
-                    mdc.ripple.MDCRipple.attachTo(upload_button);
-                    e.value = "";
-                    return false;
-                };
-
-                var filename = e.value;
-                var lastIndex = filename.lastIndexOf("\\");
-                if (lastIndex >= 0) {
-                    filename = filename.substring(lastIndex +1);
-                    document.getElementById('filename1').innerHTML = filename;
-                    upload_button.innerHTML = "換一個檔案";
-                    upload_button.className = "mat-button mdc-button mdc-button--raised green-button";
-                    mdc.ripple.MDCRipple.attachTo(upload_button);
-                }
-            }
-
-            function onTextChange(e) {
-                var a = new mdc.textField.MDCTextField(document.querySelector('#' + e.id + '-container'));
-                if(e.value.trim() == "") {
-                    a.valid = false;
-                }else{
-                    if(e.id == "yoursub") {
-                        a.valid = e.value.length >= 20;
-                    } else {
-                        a.valid = true;
-                    }
-                }
-            }
-
-            function showRules(){
-                var rules_dialog = new mdc.dialog.MDCDialog(document.querySelector('#rules-dialog'));
-                rules_dialog.show();
-            }
-
-            // js for validating required fields
-            function validate() {
-                var valid = true;
-                var name = document.getElementById('yourname').value;
-                var subm = document.getElementById('yoursub').value;
-                if(name.trim() == "" || name == null){
-                    document.getElementById('yourname').value = "";
-                    valid = false;
-                    var a = new mdc.textField.MDCTextField(document.querySelector('#yourname-container'));
-                    a.valid = false;
-                    // document.getElementById('yourname').className = "";
-                }
-                if(subm.trim() == "" || subm == null){
-                    document.getElementById('yoursub').value = "";
-                    valid = false;
-                    // set text field style
-                    var b = new mdc.textField.MDCTextField(document.querySelector('#yoursub-container'));
-                    b.valid = false;
-                    // document.getElementById('yoursub').className = "";
+        function onTextChange(e) {
+            var a = new mdc.textField.MDCTextField(document.querySelector('#' + e.id + '-container'));
+            if(e.value.trim() == "") {
+                a.valid = false;
+            }else{
+                if(e.id == "yoursub") {
+                    a.valid = e.value.length >= 20;
                 } else {
-                    var b = new mdc.textField.MDCTextField(document.querySelector('#yoursub-container'));
-                    valid = subm.length > 20;
-                    b.valid = subm.length > 20;
+                    a.valid = true;
                 }
-                // if(!document.getElementById('agree').checked){
-                //     valid = false;
-                // }
+            }
+        }
 
-                if(valid){
-                    // client side check for captcha WARNING: insecure
-                    if(grecaptcha.getResponse() == '') {
-                        var captcha_dialog = new mdc.dialog.MDCDialog(document.querySelector('#not-robot-dialog'));
-                        captcha_dialog.show();
-                        return;
-                    }
+        function showRules(){
+            var rules_dialog = new mdc.dialog.MDCDialog(document.querySelector('#rules-dialog'));
+            rules_dialog.show();
+        }
 
+        // js for validating required fields
+        function validate() {
+            var valid = true;
+            var name = document.getElementById('yourname').value;
+            var subm = document.getElementById('yoursub').value;
+            if(name.trim() == "" || name == null){
+                document.getElementById('yourname').value = "";
+                valid = false;
+                var a = new mdc.textField.MDCTextField(document.querySelector('#yourname-container'));
+                a.valid = false;
+                // document.getElementById('yourname').className = "";
+            }
+            if(subm.trim() == "" || subm == null){
+                document.getElementById('yoursub').value = "";
+                valid = false;
+                // set text field style
+                var b = new mdc.textField.MDCTextField(document.querySelector('#yoursub-container'));
+                b.valid = false;
+                // document.getElementById('yoursub').className = "";
+            } else {
+                var b = new mdc.textField.MDCTextField(document.querySelector('#yoursub-container'));
+                valid = subm.length > 20;
+                b.valid = subm.length > 20;
+            }
+            // if(!document.getElementById('agree').checked){
+            //     valid = false;
+            // }
+
+            if(valid){
+                // client side check for captcha WARNING: insecure
+                if(grecaptcha.getResponse() == '') {
+                    var captcha_dialog = new mdc.dialog.MDCDialog(document.querySelector('#not-robot-dialog'));
+                    captcha_dialog.show();
+                    return;
+                }
+
+                var confirm_dialog = new mdc.dialog.MDCDialog(document.querySelector('#confirm-submission-dialog'));
+                confirm_dialog.show();
+            }else{
+                // show invalid dialog
+                var incomplete_dialog = new mdc.dialog.MDCDialog(document.querySelector('#form-incomplete-dialog'));
+                incomplete_dialog.show();
+            }
+        }
+
+        function onSuccess() {
+            // alert("Entry submitted.");
+        }
+
+        var group_selected = [false, false, false, false, false, false, false, false];
+
+        function select_group(btn){
+            // id of button clicked
+            var gid = Number(btn.id[9])
+
+            // array of colors
+            // var colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown"];
+            var colors = ["orange", "red", "purple", "green", "blue", "pink", "yellow", "brown"];
+
+            // array of color classes
+            var cclass = colors[gid] + "-button";
+
+            // change state
+            group_selected[gid] = !group_selected[gid];
+
+            // change button style
+            if(group_selected[gid]){
+                btn.classList.remove("mdc-button--outlined");
+                btn.classList.add("mdc-button--raised");
+            }else{
+                btn.classList.remove("mdc-button--raised");
+                btn.classList.add("mdc-button--outlined");
+            }
+        }
+
+        function toggle_color(enabled){
+            // array of colors
+            // var colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown"];
+            var colors = ["orange", "red", "purple", "green", "blue", "pink", "yellow", "brown"];
+
+            // change button style
+            for(var i = 0; i < 8; i++){
+                var btn = document.getElementById('group-btn' + i);
+                if(enabled){
+                    btn.classList.remove("purple-button");
+                    btn.classList.add(colors[i] + '-button');
+                }else{
+                    btn.classList.remove(colors[i] + '-button');
+                    btn.classList.add("purple-button");
+                }
+            }
+        }
+
+        function resetForm(){
+            // reset text fields and their styles
+            document.getElementById('yourname').value = "";
+            var name = new mdc.textField.MDCTextField(document.querySelector('#yourname-container'));
+            name.valid = true;
+            document.getElementById('yoursub').value = "";
+            var sub = new mdc.textField.MDCTextField(document.querySelector('#yoursub-container'));
+            sub.valid = true;
+
+            // clear file
+            document.getElementById('file-upload1').value = "";
+            uploadOnChange(document.getElementById('file-upload1'));
+
+            // toggle all active items
+            for(var i = 0; i < 8; i++){
+                if(group_selected[i]){
+                    select_group(document.getElementById('group-btn' + i));
+                }
+            }
+
+            // uncheck the 'agree terms and conditions'
+            // document.getElementById('agree').checked = false;
+
+            // reset captcha
+            grecaptcha.reset();
+        }
+
+        function sendForm() {
+            // submit a big string instead of 8 booleans
+            var groupnames = ["總副召", "美術組", "公關組", "影片組", "文宣組", "活動組", "音樂組", "其他人"]
+            var gs = "";
+            for (var i = 0; i < 8; i++) {
+                if (group_selected[i]) {
+                    gs += groupnames[i] + " ";
+                }
+            }
+            if(gs == "") gs = "not specified";
+            document.getElementById('groups').value = gs.trim();
+            validate();
+        }
+
+        function submitForm() {
+            // clear all fields
+            resetForm();
+            // scroll to top
+            $("html, body").animate({ scrollTop: 0 }, "fast");
+        }
+
+        // client-side validation for the form
+        function validate_funds(){
+            var valid = true;
+            var yourname = document.getElementById('yourname').value;
+            var money = document.getElementById('money').value;
+            var yoursub = document.getElementById('yoursub').value;
+            if(yourname.trim() == "") valid = false;
+            if(!isGoodMoney(money)) valid = false;
+            if(yoursub.trim().length < 20) valid = false;
+            if(!valid) {
+                // show invalid dialog
+                var incomplete_dialog = new mdc.dialog.MDCDialog(document.querySelector('#form-incomplete-dialog'));
+                incomplete_dialog.show();
+            } else {
+                // client side check for captcha
+                if(grecaptcha.getResponse() == '') {
+                    var captcha_dialog = new mdc.dialog.MDCDialog(document.querySelector('#not-robot-dialog'));
+                    captcha_dialog.show();
+                } else {
                     var confirm_dialog = new mdc.dialog.MDCDialog(document.querySelector('#confirm-submission-dialog'));
                     confirm_dialog.show();
-                }else{
-                    // show invalid dialog
-                    var incomplete_dialog = new mdc.dialog.MDCDialog(document.querySelector('#form-incomplete-dialog'));
-                    incomplete_dialog.show();
                 }
             }
+        }
 
-            function onSuccess() {
-                // alert("Entry submitted.");
-            }
+        $(function() {
+            // bind form and provide a simple callback function
+            // $('#sub-form').ajaxForm(alert("meow"));
+            //
 
-            var group_selected = [false, false, false, false, false, false, false, false];
+        });
 
-            function select_group(btn){
-                // id of button clicked
-                var gid = Number(btn.id[9])
+        $("#sub-form").submit(function(e) {
+            e.preventDefault();
 
-                // array of colors
-                // var colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown"];
-                var colors = ["orange", "red", "purple", "green", "blue", "pink", "yellow", "brown"];
+            showOverlay();
 
-                // array of color classes
-                var cclass = colors[gid] + "-button";
 
-                // change state
-                group_selected[gid] = !group_selected[gid];
+            var formData = new FormData(this);
 
-                // change button style
-                if(group_selected[gid]){
-                    btn.classList.remove("mdc-button--outlined");
-                    btn.classList.add("mdc-button--raised");
-                }else{
-                    btn.classList.remove("mdc-button--raised");
-                    btn.classList.add("mdc-button--outlined");
+            var sent = false;
+            var timeout = false;
+
+            setTimeout(function(){
+                // if server didn't respond in 60 secs
+                if(!sent){
+                    submitForm();
+                    closeOverlay();
+                    document.getElementById('error-log').innerHTML = "Network timeout";
+                    document.getElementById('status').innerHTML = document.getElementById('tmp-error').innerHTML;
+                    timeout = true;
                 }
-            }
+            }, 60000);
 
-            function toggle_color(enabled){
-                // array of colors
-                // var colors = ["red", "orange", "yellow", "green", "blue", "purple", "pink", "brown"];
-                var colors = ["orange", "red", "purple", "green", "blue", "pink", "yellow", "brown"];
 
-                // change button style
-                for(var i = 0; i < 8; i++){
-                    var btn = document.getElementById('group-btn' + i);
-                    if(enabled){
-                        btn.classList.remove("purple-button");
-                        btn.classList.add(colors[i] + '-button');
-                    }else{
-                        btn.classList.remove(colors[i] + '-button');
-                        btn.classList.add("purple-button");
-                    }
-                }
-            }
-
-            function resetForm(){
-                // reset text fields and their styles
-                document.getElementById('yourname').value = "";
-                var name = new mdc.textField.MDCTextField(document.querySelector('#yourname-container'));
-                name.valid = true;
-                document.getElementById('yoursub').value = "";
-                var sub = new mdc.textField.MDCTextField(document.querySelector('#yoursub-container'));
-                sub.valid = true;
-
-                // clear file
-                document.getElementById('file-upload1').value = "";
-                uploadOnChange(document.getElementById('file-upload1'));
-
-                // toggle all active items
-                for(var i = 0; i < 8; i++){
-                    if(group_selected[i]){
-                        select_group(document.getElementById('group-btn' + i));
-                    }
-                }
-
-                // uncheck the 'agree terms and conditions'
-                // document.getElementById('agree').checked = false;
-
-                // reset captcha
-                grecaptcha.reset();
-            }
-
-            function sendForm() {
-                // submit a big string instead of 8 booleans
-                var groupnames = ["總副召", "美術組", "公關組", "影片組", "文宣組", "活動組", "音樂組", "其他人"]
-                var gs = "";
-                for (var i = 0; i < 8; i++) {
-                    if (group_selected[i]) {
-                        gs += groupnames[i] + " ";
-                    }
-                }
-                if(gs == "") gs = "not specified";
-                document.getElementById('groups').value = gs.trim();
-                validate();
-            }
-
-            function submitForm() {
-                // clear all fields
-                resetForm();
-                // scroll to top
-                $("html, body").animate({ scrollTop: 0 }, "fast");
-            }
-
-            // client-side validation for the form
-            function validate_funds(){
-                var valid = true;
-                var yourname = document.getElementById('yourname').value;
-                var money = document.getElementById('money').value;
-                var yoursub = document.getElementById('yoursub').value;
-                if(yourname.trim() == "") valid = false;
-                if(!isGoodMoney(money)) valid = false;
-                if(yoursub.trim().length < 20) valid = false;
-                if(!valid) {
-                    // show invalid dialog
-                    var incomplete_dialog = new mdc.dialog.MDCDialog(document.querySelector('#form-incomplete-dialog'));
-                    incomplete_dialog.show();
-                } else {
-                    // client side check for captcha
-                    if(grecaptcha.getResponse() == '') {
-                        var captcha_dialog = new mdc.dialog.MDCDialog(document.querySelector('#not-robot-dialog'));
-                        captcha_dialog.show();
+            $.ajax({
+                url: "process-submission.php",
+                type: 'POST',
+                data: formData,
+                success: function (data) {
+                    sent = true
+                    if(timeout) return;
+                    // $("#result").empty().append(data);
+                    submitForm();
+                    closeOverlay();
+                    // alert(data);
+                    if(data == '0'){
+                        // show success nofification
+                        document.getElementById('status').innerHTML = document.getElementById('tmp-success').innerHTML;
                     } else {
-                        var confirm_dialog = new mdc.dialog.MDCDialog(document.querySelector('#confirm-submission-dialog'));
-                        confirm_dialog.show();
-                    }
-                }
-            }
-
-            $(function() {
-                // bind form and provide a simple callback function
-                // $('#sub-form').ajaxForm(alert("meow"));
-                //
-
-            });
-
-            $("#sub-form").submit(function(e) {
-                e.preventDefault();
-
-                showOverlay();
-
-
-                var formData = new FormData(this);
-
-                var sent = false;
-                var timeout = false;
-
-                setTimeout(function(){
-                    // if server didn't respond in 60 secs
-                    if(!sent){
-                        submitForm();
-                        closeOverlay();
-                        document.getElementById('error-log').innerHTML = "504 Gateway Timeout";
-                        document.getElementById('status').innerHTML = document.getElementById('tmp-error').innerHTML;
-                        timeout = true;
-                    }
-                }, 60000);
-
-
-                $.ajax({
-                    url: "process-submission.php",
-                    type: 'POST',
-                    data: formData,
-                    success: function (data) {
-                        sent = true
-                        if(timeout) return;
-                        // $("#result").empty().append(data);
-                        submitForm();
-                        closeOverlay();
-                        // alert(data);
-                        if(data == '0'){
-                            // show success nofification
-                            document.getElementById('status').innerHTML = document.getElementById('tmp-success').innerHTML;
-                        } else {
-                            // print error log
-                            var errmsg = "";
-                            switch(data) {
-                                case "1":
-                                    errmsg = "500 Internal Server Error. This is probably a server-side bug, please try again or contact the developer.";
-                                    break;
-                                case "2":
-                                    errmsg = "Invalid input.";
-                                    break;
-                                case "3":
-                                    errmsg = "Captcha not verified.";
-                                    break;
-                                case "4":
-                                    errmsg = "There was an error while processing your file.";
-                                    break;
-                                default:
-                                    errmsg = "Unknown Error. This is definitely a bug, please try again or contact the developer.";
-                            }
-                            document.getElementById('error-log').innerHTML = errmsg;
-                            // show error nofification
-                            document.getElementById('status').innerHTML = document.getElementById('tmp-error').innerHTML;
+                        // print error log
+                        var errmsg = "";
+                        switch(data) {
+                            case "1":
+                            errmsg = "500 Internal Server Error. This is probably a server-side bug, please try again or contact the developer.";
+                            break;
+                            case "2":
+                            errmsg = "Invalid input.";
+                            break;
+                            case "3":
+                            errmsg = "Captcha not verified.";
+                            break;
+                            case "4":
+                            errmsg = "There was an error while processing your file.";
+                            break;
+                            default:
+                            errmsg = "Unknown Error. This is definitely a bug, please try again or contact the developer.";
                         }
-                    },
-                    cache: false,
-                    contentType: false,
-                    processData: false
-                });
-            });
-
-            $("#sub-formw").submit(function(event) {
-
-                /* stop form from submitting normally */
-                event.preventDefault();
-
-                // show sending overlay
-                showOverlay();
-
-                /* get some values from elements on the page: */
-                var $form = $(this);
-                    // term = $form.find('input[name="name"]').val(),
-                    // url = $form.attr('action');
-
-                var sent = false;
-                var timeout = false;
-
-                setTimeout(function(){
-                    // if server didn't respond in 10 secs
-                    if(!sent){
-                        submitForm();
-                        closeOverlay();
-                        document.getElementById('error-log').innerHTML = "504 Gateway Timeout";
+                        document.getElementById('error-log').innerHTML = errmsg;
+                        // show error nofification
                         document.getElementById('status').innerHTML = document.getElementById('tmp-error').innerHTML;
-                        timeout = true;
                     }
-                }, 10000);
+                },
+                cache: false,
+                contentType: false,
+                processData: false
+            });
+        });
+
+        $("#sub-formw").submit(function(event) {
+
+            /* stop form from submitting normally */
+            event.preventDefault();
+
+            // show sending overlay
+            showOverlay();
+
+            /* get some values from elements on the page: */
+            var $form = $(this);
+            // term = $form.find('input[name="name"]').val(),
+            // url = $form.attr('action');
+
+            var sent = false;
+            var timeout = false;
+
+            setTimeout(function(){
+                // if server didn't respond in 10 secs
+                if(!sent){
+                    submitForm();
+                    closeOverlay();
+                    document.getElementById('error-log').innerHTML = "Network timeout";
+                    document.getElementById('status').innerHTML = document.getElementById('tmp-error').innerHTML;
+                    timeout = true;
+                }
+            }, 10000);
 
 
-                var subForm = document.getElementById('sub-form');
-                var formData = new FormData(subForm);
+            var subForm = document.getElementById('sub-form');
+            var formData = new FormData(subForm);
 
-if(0){
+            if(0){
                 var xhr = new XMLHttpRequest();
                 // Add any event handlers here...
                 xhr.open('POST', 'process-submission.php', true);
@@ -663,69 +666,68 @@ if(0){
                     var errmsg = "";
                     switch(xhr.responseText) {
                         case "1":
-                            errmsg = "500 Internal Server Error. This is probably a server-side bug, please try again or contact the developer.";
-                            break;
+                        errmsg = "500 Internal Server Error. This is probably a server-side bug, please try again or contact the developer.";
+                        break;
                         case "2":
-                            errmsg = "Invalid input.";
-                            break;
+                        errmsg = "Invalid input.";
+                        break;
                         case "3":
-                            errmsg = "Captcha not verified.";
-                            break;
+                        errmsg = "Captcha not verified.";
+                        break;
                         case "4":
-                            errmsg = "There was an error while processing your file.";
-                            break;
+                        errmsg = "There was an error while processing your file.";
+                        break;
                         default:
-                            errmsg = "Unknown Error. This is definitely a bug, please try again or contact the developer.";
+                        errmsg = "Unknown Error. This is definitely a bug, please try again or contact the developer.";
                     }
                     document.getElementById('error-log').innerHTML = errmsg;
                     // show error nofification
                     document.getElementById('status').innerHTML = document.getElementById('tmp-error').innerHTML;
                 }
                 return;
-}
+            }
 
 
 
-                /* Send the data using post */
-                var posting = $.post("process-submission.php", $form.serialize());
+            /* Send the data using post */
+            var posting = $.post("process-submission.php", $form.serialize());
 
-                /* Put the results in a div */
-                posting.done(function(data) {
-                    sent = true
-                    if(timeout) return;
-                    // $("#result").empty().append(data);
-                    submitForm();
-                    closeOverlay();
-                    if(data == '0'){
-                        // show success nofification
-                        document.getElementById('status').innerHTML = document.getElementById('tmp-success').innerHTML;
-                    } else {
-                        // print error log
-                        var errmsg = "";
-                        switch(data) {
-                            case "1":
-                                errmsg = "500 Internal Server Error. This is probably a server-side bug, please try again or contact the developer.";
-                                break;
-                            case "2":
-                                errmsg = "Invalid input.";
-                                break;
-                            case "3":
-                                errmsg = "Captcha not verified.";
-                                break;
-                            case "4":
-                                errmsg = "There was an error while processing your file.";
-                                break;
-                            default:
-                                errmsg = "Unknown Error. This is definitely a bug, please try again or contact the developer.";
-                        }
-                        document.getElementById('error-log').innerHTML = errmsg;
-                        // show error nofification
-                        document.getElementById('status').innerHTML = document.getElementById('tmp-error').innerHTML;
+            /* Put the results in a div */
+            posting.done(function(data) {
+                sent = true
+                if(timeout) return;
+                // $("#result").empty().append(data);
+                submitForm();
+                closeOverlay();
+                if(data == '0'){
+                    // show success nofification
+                    document.getElementById('status').innerHTML = document.getElementById('tmp-success').innerHTML;
+                } else {
+                    // print error log
+                    var errmsg = "";
+                    switch(data) {
+                        case "1":
+                        errmsg = "500 Internal Server Error. This is probably a server-side bug, please try again or contact the developer.";
+                        break;
+                        case "2":
+                        errmsg = "Invalid input.";
+                        break;
+                        case "3":
+                        errmsg = "Captcha not verified.";
+                        break;
+                        case "4":
+                        errmsg = "There was an error while processing your file.";
+                        break;
+                        default:
+                        errmsg = "Unknown Error. This is definitely a bug, please try again or contact the developer.";
                     }
-                });
+                    document.getElementById('error-log').innerHTML = errmsg;
+                    // show error nofification
+                    document.getElementById('status').innerHTML = document.getElementById('tmp-error').innerHTML;
+                }
             });
-        </script>
+        });
+    </script>
 
-    </div>
 </body>
 </html>

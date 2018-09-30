@@ -1,0 +1,56 @@
+/* css file for cos wap files */
+
+header.mdc-top-app-bar {
+    background-color: #E74C3C;
+}
+
+.mdc-drawer__header-content {
+    background-color: #AB47BB;
+}
+
+.purple-button.mdc-button--raised, .purple-button.mdc-button--unelevated, .purple-button.mdc-button--outlined:after, .purple-button.mdc-button--outlined:before {
+    background-color: #AB47BC !important;
+}
+.purple-button.mdc-button--outlined {
+    border-color: #AB47BC !important;
+    color: #AB47BC !important;
+}
+
+:root {
+    --mdc-theme-secondary: #CB67DB;
+    --mdc-theme-primary: #E74C3C;
+}
+
+a {
+    color: #CB67DB;
+}
+a:hover {
+    color: #8B379C;
+}
+
+::selection {
+    background-color: rgba(34, 150, 250, 0.4);
+}
+
+.alert {
+    background-color: #2399F7;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px black;
+}
+.alert.alert-danger {
+    background-color: #E74C3C;
+    border-radius: 2px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7);
+}
+.alert-primary {
+    background-color: #2399F7;
+}
+
+.purple-button.mdc-button--raised, .purple-button.mdc-button--unelevated, .purple-button.mdc-button--outlined:after, .purple-button.mdc-button--outlined:before {
+    background-color: #AB47BC !important;
+    color: #fff !important;
+}
+.purple-button.mdc-button--outlined {
+    border-color: #AB47BC !important;
+    color: #AB47BC !important;
+}
