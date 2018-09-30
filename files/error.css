@@ -1,11 +1,11 @@
 /* css file for cos wap files */
 
 header.mdc-top-app-bar {
-    background-color: #AB47BC;
+    background-color: #E74C3C;
 }
 
 .mdc-drawer__header-content {
-    background-color: #2196F3;
+    background-color: #AB47BB;
 }
 
 .purple-button.mdc-button--raised, .purple-button.mdc-button--unelevated, .purple-button.mdc-button--outlined:after, .purple-button.mdc-button--outlined:before {
@@ -17,15 +17,15 @@ header.mdc-top-app-bar {
 }
 
 :root {
-    --mdc-theme-secondary: #2196F3;
-    --mdc-theme-primary: #AB47BC;
+    --mdc-theme-secondary: #CB67DB;
+    --mdc-theme-primary: #E74C3C;
 }
 
 a {
-    color: #2196F3;
+    color: #CB67DB;
 }
 a:hover {
-    color: #1565A2;
+    color: #8B379C;
 }
 
 ::selection {

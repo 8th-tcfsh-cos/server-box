@@ -1,9 +1,3 @@
-@import url(//fonts.googleapis.com/earlyaccess/notosanstc.css);
-
-*:not(.material-icons) {
-    font-family: "Share Tech", "Noto Sans TC";
-}
-
 ::selection {
     background-color: rgba(0, 204, 153, 0.3);
     text-shadow: none;
@@ -13,14 +7,6 @@ header.mdc-top-app-bar {
     box-shadow:  0px 3px 5px black;
 }
 
-nav.mdc-drawer__drawer {
-    box-shadow:  6px 0px 12px black;
-}
-
-.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
-    color: #fff;
-    font-family: "Lato";
-}
 
 .form-group {
     padding-top: 0.6rem;
@@ -82,14 +68,6 @@ p {
 }
 .mdc-button:focus {
     outline: none;
-}
-
-.mdc-drawer--temporary .mdc-list-item {
-    color: #222;
-}
-
-.mat-button.mdc-dialog__footer__button--cancel {
-    color: #606060;
 }
 
 /* A series of button colors */
@@ -177,11 +155,6 @@ p {
 }
 .mdc-button--raised.mdc-ripple-upgraded {
     /* --mdc-ripple-fg-opacity: 0.4; */
-}
-
-.mdc-list-item.mdc-list-item-active {
-    /* color: blue; */
-    background-color: #E0E0E0;
 }
 
 .mdc-ripple-surface.mdc-ripple-upgraded.mdc-button--primary:before,
@@ -364,10 +337,6 @@ ul li {
     margin-top: 3rem;
 }
 
-.page-section .section-title {
-    margin-bottom: 1.5rem;
-}
-
 .description-label {
     font-size: 1rem;
     cursor: text;
@@ -390,11 +359,13 @@ ul li {
     height: 100%;
 }
 
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    color: #fff;
+}
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
     /* color: #fff; */
     background-color: rgba(87, 87, 87, 0);
     color: rgba(255,255,255,.7);
-    font-family: 'Lato';
     margin-bottom: 0;
 }
 .mdc-text-field__input {
@@ -410,7 +381,6 @@ ul li {
 }
 .mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--invalid) .mdc-text-field__input {
     color: rgba(255, 255, 255, 1);
-    font-family: 'Lato';
 }
 
 .mdc-text-field--outlined:not(.mdc-text-field--disabled) .mdc-notched-outline__idle {
@@ -473,7 +443,6 @@ ul li {
     padding: 6px 8px;
     font-weight: 400;
     font-size: 14px;
-    font-family: 'Lato';
     margin-top: 30px;
     content: attr(data-mdc-tooltip);
     visibility: hidden;
@@ -513,7 +482,6 @@ ul li {
     margin-top: 1rem;
 }
 .announcement .a-date {
-    font-family: "Share Tech Mono";
     font-weight: bold;
     font-size: 1.4rem;
     margin: 2px 16px 0px 3px;
@@ -528,12 +496,9 @@ ul li {
     text-align: left;
 }
 
-.a-card {
-  width: 350px;
-}
-.mdc-card {
-    height: auto;
-    color: #222;
+
+.an-card::before, .an-card::after {
+    background-color: #888;
 }
 .card.mb-3 {
     margin-bottom: 1.4rem;
@@ -747,10 +712,132 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
     font-size: 1rem;
 }
 
+.page-section .section-title {
+    margin-bottom: 2.3rem;
+}
+
 * {
     /* remove font ligature */
     font-feature-settings: "liga" 0;
 }
+
+.mdc-drawer .mdc-drawer__drawer {
+    box-shadow: 4px 0px 10px rgba(0,0,0,.2), 8px 0px 16px rgba(0,0,0,.4);
+}
+.mdc-drawer__content {
+    background-color: #222;
+    color: #ddd;
+}
+.mdc-drawer .mdc-list-item {
+    color: #ddd;
+    margin: 0.5rem;
+    border-radius: 4px;
+}
+.mdc-drawer .mdc-list-item::before, .mdc-drawer .mdc-list-item::after {
+    background-color: #aaa;
+}
+.mdc-drawer .mdc-list-item:not(.mdc-list-item-active):hover {
+    background-color: #242424;
+}
+.mdc-list-item.mdc-list-item-active {
+    /* color: blue; */
+    background-color: #404040;
+    color: #fff;
+}
+.mdc-drawer .mdc-list {
+    margin: 0;
+    padding: 0;
+}
+
+.table thead th, .table tbody td, .table tbody th {
+    border-bottom: 1px solid rgb(80, 80, 80);
+    border-top: 1px solid rgb(80, 80, 68);
+    padding: 1rem 0.75rem;
+}
+.table.table-hover tr:hover {
+    transition: background-color 0.2s;
+    background-color: rgba(0,0,0,0.24);
+}
+.table.table-hover tr:not(:hover) {
+    transition: background-color 0.6s;
+}
+.table-centered td, .table-centered thead th, .table-centered tr th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.alert {
+    border-radius: 2px;
+}
+.alert:hover {
+    box-shadow: 0px 6px 15px black;
+    transform: box-shadow 0.5s;
+}
+.alert .close:not(:hover) {
+    opacity: 0.6;
+}
+.alert a {
+    color: #fff;
+}
+.alert a:hover {
+    opacity: .6;
+}
+.alert.alert-success, .alert.alert-success a {
+    /* color: #222; */
+}
+
+.mdc-dialog .mdc-dialog__surface {
+    background-color: #333;
+}
+.mdc-dialog .mdc-dialog__header__title {
+    color: #fff;
+}
+.mdc-dialog .mdc-dialog__body {
+    color: #ddd;
+}
+.mdc-dialog .mdc-dialog__footer__button--cancel {
+    color: #888;
+}
+
+.mdc-drawer__header-content {
+    font-weight: bold;
+}
+.mdc-drawer::before {
+    background-color: rgba(0,0,0,.4);
+}
+
+body.mdc-drawer-scroll-lock .page-content, body.mdc-dialog-scroll-lock .page-content,
+body.mdc-drawer-scroll-lock .mdc-top-app-bar, body.mdc-dialog-scroll-lock .mdc-top-app-bar {
+    filter: blur(4px);
+}
+
+li {
+    margin-bottom: 0.25rem;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+    font-family: "Lato";
+}
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
+    font-family: 'Lato';
+}
+.mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--invalid) .mdc-text-field__input {
+    font-family: 'Lato';
+}
+[data-mdc-tooltip]:before {
+    font-family: 'Lato';
+}
+.announcement .a-date {
+    font-family: "Share Tech Mono";
+}
+
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+*:not(.material-icons) {
+    font-family: "Share Tech", "Noto Sans TC";
+}
+
+
+
 
 /* below are not used XXX */
 

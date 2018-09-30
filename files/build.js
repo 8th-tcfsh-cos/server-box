@@ -49,8 +49,11 @@ $(function(){
     }
 
     const topAppBarElement = document.querySelector('.mdc-top-app-bar');
-    let drawer = new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-drawer--temporary'));
-    $('#menu-icon')[0].addEventListener('click', () => drawer.open = true);
+    // new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-drawer--temporary'));
+    let drawer = mdc.drawer.MDCTemporaryDrawer.attachTo(document.querySelector('.mdc-drawer'));
+    $('#menu-icon')[0].addEventListener('click', function(){
+        drawer.open = true;
+    });
 
     // function to get filename from a path
     function get_filename(s){

@@ -16,7 +16,7 @@
     <title>401 Unauthorized</title>
 
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
-    <meta name="theme-color" content="#2196F3">
+    <meta name="theme-color" content="#E74C3C">
 
     <link rel="stylesheet" href="/files/material.teal-blue.min.css"/>
     <link rel="stylesheet" href="/files/material-components-web.min.css"/>
@@ -26,7 +26,8 @@
 
     <link rel="stylesheet" href="/files/bootstrap.css" media="screen">
     <link rel="stylesheet" href="/files/custom.min.css">
-    <link rel="stylesheet" href="/files/style.css">
+    <link rel="stylesheet" href="/files/style.css?v=1.1">
+    <link rel="stylesheet" href="/files/error.css?v=1.1">
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
 
     <!-- Nice fonts -->
@@ -61,47 +62,40 @@
             </button>
         </section>
 
-        <aside id="dont-click-dialog" class="mdc-dialog">
-            <div class="mdc-dialog__surface">
-                <header class="mdc-dialog__header">
-                    <h2 id="dont-click-dialog-label" class="mdc-dialog__header__title">
-                        ???
-                    </h2>
-                </header>
-                <section id="dont-click-dialog-description" class="mdc-dialog__body">
-                    就叫你不要按
-                </section>
-                <footer class="mdc-dialog__footer">
-                    <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept" onClick="window.location='https://www.youtube.com/watch?v=KYniUCGPGLs'">沙毀</button>
-                </footer>
-            </div>
-            <div class="mdc-dialog__backdrop"></div>
-        </aside>
-
-
-        <!-- <label id="mat-button1" class="mat-button mdc-button mdc-button--raised" onClick="window.location='form.html';" style="width: 100%; padding-top: 40%;">
-            <label style="position: absolute; width: 100%; top: 50%; text-align: center; font-size: 10vw; font-family: 'Roboto', snas-serif;">
-                Button
-            </label>
-        </label> -->
-
         <footer id="footer">
             <!-- will be loaded later -->
         </footer>
 
-        <script type="text/javascript" src="/files/jquery.min.js"></script>
-        <script type="text/javascript" src="/files/build-fallback.js"></script>
-
-        <script type="text/javascript" src="/files/popper.min.js"></script>
-        <script type="text/javascript" src="/files/bootstrap.min.js"></script>
-        
-        <script defer src="/files/material-components-web.min.js"></script>
-        <script>
-            function errorr(){
-                var dont_click_dialog = new mdc.dialog.MDCDialog(document.querySelector('#dont-click-dialog'));
-                dont_click_dialog.show();
-            }
-        </script>
     </div>
+    <aside id="dont-click-dialog" class="mdc-dialog">
+        <div class="mdc-dialog__surface">
+            <header class="mdc-dialog__header">
+                <h2 id="dont-click-dialog-label" class="mdc-dialog__header__title">
+                    ???
+                </h2>
+            </header>
+            <section id="dont-click-dialog-description" class="mdc-dialog__body">
+                就叫你不要按
+            </section>
+            <footer class="mdc-dialog__footer">
+                <button type="button" class="mat-button mdc-button mdc-dialog__footer__button mdc-dialog__footer__button--accept" onClick="window.location='https://www.youtube.com/watch?v=KYniUCGPGLs'">沙毀</button>
+            </footer>
+        </div>
+        <div class="mdc-dialog__backdrop"></div>
+    </aside>
+
+    <script type="text/javascript" src="/files/jquery.min.js"></script>
+    <script type="text/javascript" src="/files/build-fallback.js?v=1"></script>
+
+    <script type="text/javascript" src="/files/popper.min.js"></script>
+    <script type="text/javascript" src="/files/bootstrap.min.js"></script>
+
+    <script defer src="/files/material-components-web.min.js"></script>
+    <script>
+    function errorr(){
+        var dont_click_dialog = new mdc.dialog.MDCDialog(document.querySelector('#dont-click-dialog'));
+        dont_click_dialog.show();
+    }
+    </script>
 </body>
 </html>
