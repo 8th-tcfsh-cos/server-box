@@ -11,7 +11,7 @@ $(function(){
             $("#drawer").load("drawer.html");
             $("#top-bar").load("top-bar.html");
 
-            await sleep(100);
+            await sleep(50);
 
             // attach a ripple to each button
             for (var i = 0; i < document.querySelectorAll('.mat-button').length; i++) {

@@ -28,14 +28,14 @@
 
     <link rel="stylesheet" href="/files/bootstrap.css" media="screen">
     <link rel="stylesheet" href="/files/custom.min.css">
-    <link rel="stylesheet" href="/files/style.css?v=1.1">
+    <link rel="stylesheet" href="/files/style.css?v=1.2">
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
 
     <!-- Nice fonts -->
-    
-    
+
+
     <link href="https://fonts.googleapis.com/css?family=Share+Tech+Mono" rel="stylesheet">
-    
+
 </head>
 
 <body id="body">
@@ -57,10 +57,8 @@
             </div>
         </div>
 
-        <section style="margin-top: 2.2rem; margin-bottom: 1.4rem;">
-            <p>
-                在購置主機之前，本版更新會較慢，敬請見諒。
-            </p>
+        <section style="margin-top: 2.2rem; margin-bottom: 1.6rem;">
+
             <hr>
         </section>
 
@@ -218,7 +216,7 @@
         </footer>
 
         <script type="text/javascript" src="/files/jquery.min.js"></script>
-        <script type="text/javascript" src="/files/build.js?v=1.1"></script>
+        <script type="text/javascript" src="/files/build.js?v=1.2"></script>
 
         <script type="text/javascript" src="/files/popper.min.js"></script>
         <script type="text/javascript" src="/files/bootstrap.min.js"></script>
@@ -240,6 +238,7 @@
             function showPost(n) {
                 // show n-th post
                 $('body')[0].classList.add('mdc-drawer-scroll-lock');
+                $('body')[0].classList.add('overlay-scroll-lock');
 
                 st = document.getElementById("post"+n).style;
                 st.width = "100%";
@@ -249,6 +248,7 @@
             /* Close when someone clicks inside the overlay */
             function closePost(n) {
                 $('body')[0].classList.remove('mdc-drawer-scroll-lock');
+                $('body')[0].classList.remove('overlay-scroll-lock');
 
                 // if(is_zoomed) return;
                 st = document.getElementById("post"+n).style;

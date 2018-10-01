@@ -15,7 +15,7 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
-    <title>箱子</title>
+    <title>作業們</title>
 
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
     <meta name="theme-color" content="#2196F3">
@@ -28,13 +28,47 @@
 
     <link rel="stylesheet" href="/files/bootstrap.css" media="screen">
     <link rel="stylesheet" href="/files/custom.min.css">
-    <link rel="stylesheet" href="/files/style.css?v=1.1">
+    <link rel="stylesheet" href="/files/style.css?v=1.2">
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
 
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.10.0-rc.1/dist/katex.min.css" integrity="sha384-D+9gmBxUQogRLqvARvNLmA9hS2x//eK1FhVb9PiU86gmcrBrJAQT8okdJ4LMp2uv" crossorigin="anonymous"> -->
 
     <link rel="stylesheet" href="/files/katex/katex.min.css">
 
+    <link rel="stylesheet" href="/files/Computer Modern/Serif/cmun-serif.css">
+
+    <style type="text/css">
+        .math-container {
+            margin: 0 calc(5vw - 15px);
+        }
+        .math-container li {
+            font-size: 1rem;
+        }
+        .math-container, .math-container * {
+            font-family: "Computer Modern Serif";
+        }
+        .math-container li, .math-container p {
+            text-align: justify;
+        }
+        .math-container h3, .math-container h4, .math-container h5 {
+            text-align: center;
+        }
+        .math-container ol {
+            padding-left: 20px;
+        }
+        .katex {
+            font-size: 1rem !important;
+        }
+        .katex-display {
+            text-align: center;
+        }
+        .math-container li p {
+            margin-bottom: 0.5rem;
+        }
+        .math-container li {
+            margin-bottom: 1rem;
+        }
+    </style>
 </head>
 
 <body id="body">
@@ -57,7 +91,60 @@
         </div>
 
         <section class="page-section">
-            晚上(10/1)再做
+            <strong>注意：這不是完整的作業列表。</strong>
+            <div id="open-select-list" class="fill-list-button-container" style="margin-top: 1.2rem;">
+                <button type="button" class="mat-button mdc-button mdc-button--raised blue-button fill-list-button" onClick="select_subject(0)">
+                    選擇科目
+                </button>
+            </div>
+            <div id="select-sub-list" class="fill-list-button-container" style="margin-top: 0.4rem;">
+                <button type="button" class="mat-button mdc-button mdc-button--raised blue-button fill-list-button subject-button" onClick="select_subject(1)" style="height: 0;">
+                    英文
+                </button>
+                <button type="button" class="mat-button mdc-button mdc-button--raised blue-button fill-list-button subject-button" onClick="select_subject(2)" style="height: 0;">
+                    微積分
+                </button>
+            </div>
+        </section>
+
+        <section id="calculus-hw" class="page-section" style="margin-top: 1.6rem; display: none;">
+            <div class="math-container">
+                <h3>Ch2 Limits</h3>
+                <h4>September 14, 2018</h4>
+
+                <p>
+                    <ol>
+                        <li>
+                            <p>
+                                (a)
+                                <span style="display: inline-block">
+                                    Show that the equation \( 1+2x+x^3+4x^5=0 \) has a real root.
+                                </span>
+                            </p>
+                            <p>
+                                (b)
+                                <span style="display: inline-block">
+                                    Show that the equation \(x = \cos x\) has a real root.
+                                </span>
+                            </p>
+                        </li>
+                        <li>
+                            <p>
+                                (10 points) If \(a\) and \(b\) are positive numbers, show that the equation
+                                \[
+                                    a(x^2+x+2)=b(1-2x^2-x^3)
+                                \]
+                                has at least one real root.
+                            </p>
+                        </li>
+                    </ol>
+                </p>
+            </div>
+        </section>
+        <section id="english-hw" class="page-section" style="margin-top: 1.6rem; display: none;">
+            <p>
+                I need pictures
+            </p>
         </section>
 
         <section class="page-section" style="display: none;">
@@ -102,6 +189,47 @@
                             </div>
         </section>
 
+        <section class="page-section" style="display: none;">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active show" data-toggle="tab" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                    <div class="dropdown-menu" x-placement="bottom-start" style="position: absolute; transform: translate3d(0px, 40px, 0px); top: 0px; left: 0px; will-change: transform;">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade active show" id="home">
+                    <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher
+                        synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                    </div>
+                    <div class="tab-pane fade" id="profile">
+                        <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth
+                            letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit.</p>
+                        </div>
+                        <div class="tab-pane fade" id="dropdown1">
+                            <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy
+                                salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork.</p>
+                            </div>
+                            <div class="tab-pane fade" id="dropdown2">
+                                <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo
+                                    park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater.</p>
+                                </div>
+                            </div>
+        </section>
         <style>
             #hw-tabs {
                 display: flex;
@@ -116,7 +244,6 @@
                 height: 3rem;
             }
         </style>
-
         <section class="page-section" style="display: none;">
             <div id="hw-tabs" class="custom-tabs">
                 <button type="button" class="mat-button mdc-button mdc-button--outlined blue-button">
@@ -142,7 +269,6 @@
                 </button>
             </div>
         </section>
-
         <section class="page-section" style="display: none;">
             <div id="subject-menu-container" class="mdc-menu-surface--anchor">
                 <button id="menu-button" class="mat-button mdc-button mdc-button--raised blue-button" onclick="select_subject()">選擇科目</button>
@@ -168,7 +294,7 @@
     </div>
 
     <script type="text/javascript" src="/files/jquery.min.js"></script>
-    <script type="text/javascript" src="/files/build.js?v=1.1"></script>
+    <script type="text/javascript" src="/files/build.js?v=1.2"></script>
 
     <script type="text/javascript" src="/files/popper.min.js"></script>
     <script type="text/javascript" src="/files/bootstrap.min.js"></script>
@@ -190,8 +316,30 @@
         });
 
         // select homework subject
-        function select_subject(){
-
+        function select_subject(n){
+            var s = ['', 'english-hw', 'calculus-hw'];
+            if(n == 0) {
+                for(var i = 0; i < $('.subject-button').length; i++){
+                    $('.subject-button')[i].style.height = "2.7rem";
+                }
+                return;
+            } else if(n == 1) {
+                for(var i = 0; i < $('.subject-button').length; i++){
+                    $('.subject-button')[i].style.height = "0";
+                }
+            } else if(n == 2) {
+                for(var i = 0; i < $('.subject-button').length; i++){
+                    $('.subject-button')[i].style.height = "0";
+                }
+            }
+            for(var i = 1; i < s.length; i++){
+                var t = document.getElementById(s[i]);
+                if(n == i) {
+                    t.style.display = "block";
+                } else {
+                    t.style.display = "none";
+                }
+            }
         }
     </script>
 

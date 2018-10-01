@@ -760,9 +760,11 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
     margin: 0;
     padding: 0;
 }
-
-.mdc-drawer .material-icons {
-    color: #FFF;
+.mdc-list-item.mdc-list-item-active .material-icons {
+    color: #fff;
+}
+.mdc-list-item .material-icons {
+    color: #ddd;
 }
 
 .table thead th, .table tbody td, .table tbody th {
@@ -822,14 +824,37 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
     background-color: rgba(0,0,0,.4);
 }
 
-body.mdc-drawer-scroll-lock .page-content, body.mdc-dialog-scroll-lock .page-content,
-body.mdc-drawer-scroll-lock .mdc-top-app-bar, body.mdc-dialog-scroll-lock .mdc-top-app-bar {
+body.mdc-drawer-scroll-lock:not(.overlay-scroll-lock) .page-content, body.mdc-dialog-scroll-lock .page-content,
+body.mdc-drawer-scroll-lock:not(.overlay-scroll-lock) .mdc-top-app-bar, body.mdc-dialog-scroll-lock .mdc-top-app-bar {
     filter: blur(4px);
 }
 
 li {
     margin-bottom: 0.25rem;
 }
+
+.fill-list-button-container {
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.fill-list-button-container .fill-list-button {
+    width: 4rem;
+    flex-grow: 1;
+    flex-shrink: 0.5;
+    margin: 4px 6px;
+    height: 2.7rem;
+    transition: height 0.6s;
+}
+.fill-list-button-container .fill-list-button:nth-of-type(1) {
+    margin-left: 0;
+}
+.fill-list-button-container .fill-list-button:nth-last-of-type(1) {
+    margin-right: 0;
+}
+
+
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
     font-family: "Roboto";
