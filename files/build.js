@@ -1,72 +1,101 @@
-// load common layouts from local directory(NOTE: must be run AFTER including jquery)
-$("#footer").load("footer.html");
-$("#drawer").load("drawer.html");
-$("#top-bar").load("top-bar.html");
+// initialize components(NOTE: must be run AFTER including jquery)
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-// initialize components
 $(function(){
-    // attach a ripple to each button
-    for (var i = 0; i < document.querySelectorAll('.mat-button').length; i++) {
-        var btn = document.querySelectorAll('.mat-button')[i];
-        var rip = new mdc.ripple.MDCRipple(btn);
-    }
-    // attach a ripple to each drawer item
-    for (var i = 0; i < document.querySelectorAll('.drawer-link').length; i++) {
-        var btn = document.querySelectorAll('.drawer-link')[i];
-        var rip = new mdc.ripple.MDCRipple(btn);
-    }
-    // attach a ripple to each material icon
-    for (var i = 0; i < document.querySelectorAll('.material-icons').length; i++) {
-        var btn = document.querySelectorAll('.material-icons')[i];
-        var rip = new mdc.ripple.MDCRipple(btn);
-        rip.unbounded=true;
-    }
+    async function load() {
+        try {
+            // load common layouts from local directory
+            $("#footer").load("footer.html");
+            $("#drawer").load("drawer.html");
+            $("#top-bar").load("top-bar.html");
 
-    for (var i = 0; i < document.querySelectorAll('.mdc-drawer__header-content').length; i++) {
-        var btn = document.querySelectorAll('.mdc-drawer__header-content')[i];
-        var rip = new mdc.ripple.MDCRipple(btn);
-        // rip.unbounded=true;
-    }
-    for (var i = 0; i < document.querySelectorAll('.an-card').length; i++) {
-        var btn = document.querySelectorAll('.an-card')[i];
-        var rip = new mdc.ripple.MDCRipple(btn);
-        // rip.unbounded=true;
-    }
+            await sleep(100);
 
-    // const checkbox = new mdc.checkbox.MDCCheckbox(document.querySelector('.mdc-checkbox'));
-    // const formField = new mdc.formField.MDCFormField(document.querySelector('.mdc-form-field'));
-    // formField.input = checkbox;
+            // attach a ripple to each button
+            for (var i = 0; i < document.querySelectorAll('.mat-button').length; i++) {
+                var btn = document.querySelectorAll('.mat-button')[i];
+                var rip = new mdc.ripple.MDCRipple(btn);
+            }
+            // attach a ripple to each drawer item
+            for (var i = 0; i < document.querySelectorAll('.drawer-link').length; i++) {
+                var btn = document.querySelectorAll('.drawer-link')[i];
+                var rip = new mdc.ripple.MDCRipple(btn);
+            }
+            // attach a ripple to each material icon
+            for (var i = 0; i < document.querySelectorAll('.material-icons').length; i++) {
+                var btn = document.querySelectorAll('.material-icons')[i];
+                var rip = new mdc.ripple.MDCRipple(btn);
+                rip.unbounded=true;
+            }
 
-    // instantiate all text fields
-    for (var i = 0; i < document.querySelectorAll('.mdc-text-field').length; i++) {
-        var tf = document.querySelectorAll('.mdc-text-field')[i];
-        var txt = new mdc.textField.MDCTextField(tf);
-    }
+            for (var i = 0; i < document.querySelectorAll('.mdc-drawer__header-content').length; i++) {
+                var btn = document.querySelectorAll('.mdc-drawer__header-content')[i];
+                var rip = new mdc.ripple.MDCRipple(btn);
+                // rip.unbounded=true;
+            }
+            for (var i = 0; i < document.querySelectorAll('.an-card').length; i++) {
+                var btn = document.querySelectorAll('.an-card')[i];
+                var rip = new mdc.ripple.MDCRipple(btn);
+                // rip.unbounded=true;
+            }
 
-    // and text field icons
-    for (var i = 0; i < document.querySelectorAll('.mdc-text-field__icon').length; i++) {
-        var icon = new mdc.textField.MDCTextFieldIcon(document.querySelectorAll('.mdc-text-field__icon')[i]);
-    }
+            // const checkbox = new mdc.checkbox.MDCCheckbox(document.querySelector('.mdc-checkbox'));
+            // const formField = new mdc.formField.MDCFormField(document.querySelector('.mdc-form-field'));
+            // formField.input = checkbox;
 
-    const topAppBarElement = document.querySelector('.mdc-top-app-bar');
-    // new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-drawer--temporary'));
-    let drawer = mdc.drawer.MDCTemporaryDrawer.attachTo(document.querySelector('.mdc-drawer'));
-    $('#menu-icon')[0].addEventListener('click', function(){
-        drawer.open = true;
-    });
+            // instantiate all text fields
+            for (var i = 0; i < document.querySelectorAll('.mdc-text-field').length; i++) {
+                var tf = document.querySelectorAll('.mdc-text-field')[i];
+                var txt = new mdc.textField.MDCTextField(tf);
+            }
 
-    // function to get filename from a path
-    function get_filename(s){
-        return s.substring(s.lastIndexOf('/')+1);
-    }
+            // and text field icons
+            for (var i = 0; i < document.querySelectorAll('.mdc-text-field__icon').length; i++) {
+                var icon = new mdc.textField.MDCTextFieldIcon(document.querySelectorAll('.mdc-text-field__icon')[i]);
+            }
 
-    // find link of current page in drawer and highlight it
-    for(var i = 0; i < $('.drawer-link').length; i++){
-        var link = $('.drawer-link')[i];
-        // if(link == null) continue;
-        if(get_filename(link.href) == get_filename(window.location.pathname)){
-            link.classList.add('mdc-list-item-active');
+            const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+            // new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-drawer--temporary'));
+            let drawer = mdc.drawer.MDCTemporaryDrawer.attachTo(document.querySelector('.mdc-drawer'));
+            $('#menu-icon')[0].addEventListener('click', function(){
+                drawer.open = true;
+            });
+
+            // const tabBar = new mdc.tabs.MDCTabBar(document.querySelector('.mdc-tab-bar'));
+            // for (var i = 0; i < document.querySelectorAll('.mdc-tab').length; i++) {
+            //     mdc.tabs.MDCTab.attachTo(document.querySelectorAll('.mdc-tab')[i]);
+            // }
+            // for (var i = 0; i < document.querySelectorAll('.mdc-tab-indicator').length; i++) {
+            //     mdc.tabs.MDCTabIndicator.attachTo(document.querySelectorAll('.mdc-tab-indicator')[i]);
+            // }
+            // mdc.tabs.MDCTabBarScroller.attachTo(document.querySelector('.mdc-tab-scroller'));
+
+
+            // function to get filename from a path
+            function get_filename(s){
+                return s.substring(s.lastIndexOf('/')+1);
+            }
+
+            // find link of current page in drawer and highlight it
+            for(var i = 0; i < $('.drawer-link').length; i++){
+                var link = $('.drawer-link')[i];
+                // if(link == null) continue;
+                if(get_filename(link.href) == get_filename(window.location.pathname)){
+                    link.classList.add('mdc-list-item-active');
+                }
+                // path '/' == path 'index.html'
+                if(get_filename(link.href) == 'index.html'){
+                    if(get_filename(window.location.pathname) == ''){
+                        link.classList.add('mdc-list-item-active');
+                    }
+                }
+            }
+        } catch (e) {
+            alert("An error occurred while loading the page. Please refresh the page or contact the developer.\nError detail: " + e);
+            throw e;
         }
     }
-
+    load();
 });
