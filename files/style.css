@@ -761,6 +761,10 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
     padding: 0;
 }
 
+.mdc-drawer .material-icons {
+    color: #FFF;
+}
+
 .table thead th, .table tbody td, .table tbody th {
     border-bottom: 1px solid rgb(80, 80, 80);
     border-top: 1px solid rgb(80, 80, 68);
