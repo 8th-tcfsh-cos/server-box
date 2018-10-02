@@ -93,8 +93,8 @@ $(function(){
                 }
             }
         } catch (e) {
-            console.log("An error occurred while loading the page. Please refresh the page or contact the developer.\nError detail: " + e);
-            location.reload();
+            alert("載入頁面時發生問題。若發現任何 bug 請重整網頁，或按右上角的 '<>' 按鈕 -> issues 進行回報。");
+            // location.reload();
             throw e;
         }
     }
