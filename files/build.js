@@ -7,11 +7,11 @@ $(function(){
     async function load() {
         try {
             // load common layouts from local directory
-            $("#footer").load("footer.html?v=1.4");
-            $("#drawer").load("drawer.html?v=1.4");
-            $("#top-bar").load("top-bar.html?v=1.4");
+            await $("#footer").load("footer.html?v=1.4");
+            await $("#drawer").load("drawer.html?v=1.4");
+            await $("#top-bar").load("top-bar.html?v=1.4");
 
-            await sleep(10);
+            await sleep(100);
 
             // attach a ripple to each button
             for (var i = 0; i < document.querySelectorAll('.mat-button').length; i++) {
