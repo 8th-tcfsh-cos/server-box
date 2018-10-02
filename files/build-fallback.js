@@ -7,9 +7,9 @@ $(function(){
     async function load() {
         try {
             // load common layouts from local directory
-            $("#footer").load("/footer.html?v=1.3");
-            $("#drawer").load("/drawer.html?v=1.3");
-            $("#top-bar").load("/top-bar.html?v=1.3");
+            $("#footer").load("/footer.html?v=1.4");
+            $("#drawer").load("/drawer.html?v=1.4");
+            $("#top-bar").load("/top-bar.html?v=1.4");
 
             await sleep(100);
 
