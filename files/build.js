@@ -7,11 +7,11 @@ $(function(){
     async function load() {
         try {
             // load common layouts from local directory
-            $("#footer").load("footer.html");
-            $("#drawer").load("drawer.html");
-            $("#top-bar").load("top-bar.html");
+            $("#footer").load("footer.html?v=1.3");
+            $("#drawer").load("drawer.html?v=1.3");
+            $("#top-bar").load("top-bar.html?v=1.3");
 
-            await sleep(50);
+            await sleep(10);
 
             // attach a ripple to each button
             for (var i = 0; i < document.querySelectorAll('.mat-button').length; i++) {
@@ -93,7 +93,8 @@ $(function(){
                 }
             }
         } catch (e) {
-            alert("An error occurred while loading the page. Please refresh the page or contact the developer.\nError detail: " + e);
+            console.log("An error occurred while loading the page. Please refresh the page or contact the developer.\nError detail: " + e);
+            location.reload();
             throw e;
         }
     }
