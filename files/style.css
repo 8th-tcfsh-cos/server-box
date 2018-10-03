@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+
 ::selection {
     background-color: rgba(0, 204, 153, 0.3);
     text-shadow: none;
@@ -854,6 +857,11 @@ li {
     margin-right: 0;
 }
 
+.update-list {
+    font-size: 1rem;
+    margin-top: 0.85rem;
+}
+
 
 
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
@@ -872,7 +880,6 @@ li {
     font-family: "Share Tech Mono";
 }
 
-@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 *:not(.material-icons) {
     font-family: "Share Tech", "Noto Sans TC";
 }
@@ -880,7 +887,9 @@ li {
     font-family: inherit;
 }
 
-
+.version-title {
+    font-family: "Share Tech Mono", "Share Tech";
+}
 
 
 /* below are not used XXX */
