@@ -30,8 +30,8 @@
 
     <link rel="stylesheet" href="/files/bootstrap.css" media="screen">
     <link rel="stylesheet" href="/files/custom.min.css">
-    <link rel="stylesheet" href="/files/style.css?v=1.5">
-    <link rel="stylesheet" href="./wap.css?v=1.5">
+    <link rel="stylesheet" href="/files/style.css?v=1.6">
+    <link rel="stylesheet" href="./wap.css?v=1.6">
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
 
     <!-- Nice fonts -->
@@ -45,7 +45,7 @@
 
     <div id="drawer"></div>
 
-    <div class="page-content">
+    <div id="main-content" class="page-content">
 
         <div class="section-header clearfix" id="title">
             <div class="row">
@@ -113,19 +113,19 @@
                 <!-- <hr class="sep"> -->
                 <label class="description-label">收件者是?&nbsp;(多選)</label>
                 <div class="toggle-button-group">
-                    <button type="button" id="group-btn1" class="mat-button mdc-button mdc-button--outlined   red-button purple-button" onClick="select_group(this)" style="margin-bottom: 3px">美術組</button>
                     <button type="button" id="group-btn0" class="mat-button mdc-button mdc-button--outlined orange-button purple-button" onClick="select_group(this)" style="margin-bottom: 3px">總副召</button>
-                    <button type="button" id="group-btn6" class="mat-button mdc-button mdc-button--outlined yellow-button purple-button" onClick="select_group(this)" style="margin-bottom: 3px">音樂組</button>
+                    <button type="button" id="group-btn1" class="mat-button mdc-button mdc-button--outlined   red-button purple-button" onClick="select_group(this)" style="margin-bottom: 3px">美術組</button>
+                    <button type="button" id="group-btn2" class="mat-button mdc-button mdc-button--outlined purple-button purple-button" onClick="select_group(this)" style="margin-bottom: 3px">公關組</button>
                     <button type="button" id="group-btn3" class="mat-button mdc-button mdc-button--outlined green-button purple-button" onClick="select_group(this)" style="margin-bottom: 3px">影片組</button>
                     <button type="button" id="group-btn4" class="mat-button mdc-button mdc-button--outlined blue-button purple-button" onClick="select_group(this)" style="margin-bottom: 3px">文宣組</button>
-                    <button type="button" id="group-btn2" class="mat-button mdc-button mdc-button--outlined purple-button purple-button" onClick="select_group(this)" style="margin-bottom: 3px">公關組</button>
                     <button type="button" id="group-btn5" class="mat-button mdc-button mdc-button--outlined pink-button purple-button" onClick="select_group(this)" style="margin-bottom: 3px">活動組</button>
+                    <button type="button" id="group-btn6" class="mat-button mdc-button mdc-button--outlined yellow-button purple-button" onClick="select_group(this)" style="margin-bottom: 3px">音樂組</button>
                     <button type="button" id="group-btn7" class="mat-button mdc-button mdc-button--outlined brown-button purple-button" onClick="select_group(this)" style="margin-bottom: 3px">其他人</button>
                 </div>
                 <input class="form-control" name="groups" id="groups" type="text" placeholder="Invisible input here…" style="display: none"></input>
-                <span class="mdc-form-field form-group">
-                    <div class="mdc-checkbox">
-                        <input type="checkbox" class="mdc-checkbox__native-control" id="color-switch" onChange="toggle_color(this.checked);"/>
+                <!-- <div id="color-switch-field" class="mdc-form-field form-group">
+                    <div id="color-switch" class="mdc-checkbox">
+                        <input id="color-switch-control" type="checkbox" class="mdc-checkbox__native-control" onChange="toggle_color(this.checked);"/>
                         <div class="mdc-checkbox__background">
                             <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
                                 <path class="mdc-checkbox__checkmark-path" fill="none" d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
@@ -133,10 +133,10 @@
                             <div class="mdc-checkbox__mixedmark"></div>
                         </div>
                     </div>
-                    <label class="checkbox-label" for="color-switch">
+                    <label class="checkbox-label" for="color-switch-control">
                         彩虹
                     </label>
-                </span>
+                </div> -->
             </div>
             <div class="form-group">
                 <!-- <hr class="sep"> -->
@@ -181,7 +181,6 @@
                     </span>
                 </small> -->
             </div>
-            <!-- hidden for now -->
 
             <div class="form-group recaptcha-container">
                 <div class="g-recaptcha" data-theme="dark" data-size="normal" data-sitekey="6LeAqGkUAAAAAD81DFKbkAC-bgP1MYS5Tq3HQS9n">
@@ -283,7 +282,7 @@
     </div>
 
     <script type="text/javascript" src="/files/jquery.min.js"></script>
-    <script type="text/javascript" src="/files/build.js?v=1.5"></script>
+    <script type="text/javascript" src="/files/build.js?v=1.6"></script>
 
     <script type="text/javascript" src="/files/popper.min.js"></script>
     <script type="text/javascript" src="/files/bootstrap.min.js"></script>
@@ -546,8 +545,10 @@
         $(function() {
             // bind form and provide a simple callback function
             // $('#sub-form').ajaxForm(alert("meow"));
-            //
 
+            // const checkbox = new mdc.checkbox.MDCCheckbox(document.getElementById('color-switch'));
+            // const formField = new mdc.formField.MDCFormField(document.getElementById('color-switch-field'));
+            // formField.input = checkbox;
         });
 
         $("#sub-form").submit(function(e) {

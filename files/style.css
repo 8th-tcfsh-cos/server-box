@@ -1,5 +1,37 @@
 @import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 
+/* for different displays */
+@media (max-width: 360px) {
+    html, :root {
+        font-size: 14px;
+    }
+}
+@media (min-width: 540px) {
+    html, :root {
+        font-size: 15px;
+    }
+}
+@media (min-width: 900px) {
+    html, :root {
+        font-size: 16px;
+    }
+}
+@media (min-width: 1400px) {
+    html, :root {
+        font-size: 17px;
+    }
+}
+@media (min-width: 2000px) {
+    html, :root {
+        font-size: 18px;
+    }
+}
+@media (min-width: 2800px) {
+    html, :root {
+        font-size: 20px;
+    }
+}
+
 
 ::selection {
     background-color: rgba(0, 204, 153, 0.3);
@@ -170,7 +202,7 @@ p {
         }
 
 :root {
-    font-size: 16px;
+    /* font-size: 16px; */
     --mdc-theme-primary: #2196F3;
     /* --mdc-theme-secondary: #009688; */
     --mdc-theme-secondary: #26A69A;
@@ -376,7 +408,7 @@ ul li {
     margin-bottom: 0;
 }
 .mdc-text-field__input {
-    height: 50px;
+    /* height: 50px; */
 }
 .mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mdc-text-field__input {
     border-bottom-width: 2px;
@@ -690,7 +722,6 @@ html {
 }
 
 
-
 .section-header {
     /* large text!! */
     font-size: 2.4rem;
@@ -728,6 +759,11 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
     font-feature-settings: "liga" 0;
 }
 
+
+.mdc-top-app-bar__title  {
+    padding-top: 1px;
+}
+
 .mdc-drawer .mdc-drawer__drawer {
     box-shadow: 4px 0px 10px rgba(0,0,0,.2), 8px 0px 16px rgba(0,0,0,.4);
     /* width: calc(100% - 64px); */
@@ -744,20 +780,28 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
     color: #ddd;
     margin: 0.5rem;
     border-radius: 4px;
+    font-size: .9rem;
+    padding-top: .1rem;
+    transition: background-color .6s, padding-left .4s;
 }
 .mdc-drawer .mdc-list-item:nth-child(1) {
-    margin: 0.5rem;
+    margin: .5rem;
 }
 .mdc-drawer .mdc-list-item::before, .mdc-drawer .mdc-list-item::after {
     background-color: #aaa !important;
 }
 .mdc-drawer .mdc-list-item:not(.mdc-list-item-active):hover {
-    background-color: #242424;
+    box-shadow: 0px 2px 12px rgba(0,0,0,.3), 3px 2px 8px rgba(0,0,0,.1);
+    transition: background-color .3s, padding-left .25s;
+    background-color: #303030;
+    padding-left: 1.75rem;
 }
 .mdc-list-item.mdc-list-item-active {
     /* color: blue; */
-    background-color: #404040;
+    background-color: #505050;
     color: #fff;
+    padding-left: 1.75rem;
+    box-shadow: 0px 6px 15px rgba(0,0,0,.4), 2px 4px 12px rgba(0,0,0,.2);
 }
 .mdc-drawer .mdc-list {
     margin: 0;
@@ -861,6 +905,71 @@ li {
     font-size: 1rem;
     margin-top: 0.85rem;
 }
+.update-list ul {
+    padding-left: 1rem;
+    margin-top: 4px;
+}
+.version-title {
+    padding-top: 6rem;
+    margin-top: -6rem;
+}
+
+#menu-icon > span, #settings-icon > span, #switch-icon > span {
+    transition: transform .3s;
+    transform-origin: 50% 50%;
+}
+#menu-icon:hover > span, #settings-icon:hover > span, #switch-icon:hover > span {
+    transform: rotate(180deg);
+}
+@keyframes bounce-up {
+    0% {
+        transform: translateY(0px);
+    }
+
+    6% {
+        transform: translateY(-6px);
+    }
+    20% {
+        transform: translateY(-12px);
+    }
+    34% {
+        transform: translateY(-6px);
+    }
+    40% {
+        transform: translateY(0px);
+    }
+
+    45% {
+        transform: translateY(-4px);
+    }
+    55% {
+        transform: translateY(-8px);
+    }
+    65% {
+        transform: translateY(-4px);
+    }
+    70% {
+        transform: translateY(0px);
+    }
+
+    75% {
+        transform: translateY(-2px);
+    }
+    85% {
+        transform: translateY(-4px);
+    }
+    95% {
+        transform: translateY(-2px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+#home-icon:hover, #repo-icon:hover, #login-icon:hover {
+    animation: bounce-up .7s linear;
+}
+
+
 
 
 
@@ -886,7 +995,6 @@ li {
 .katex * {
     font-family: inherit;
 }
-
 .version-title {
     font-family: "Share Tech Mono", "Share Tech";
 }

@@ -1,0 +1,57 @@
+/* css file for cos wap files */
+
+header.mdc-top-app-bar {
+    background-color: #FCA400;
+}
+
+.mdc-drawer__header-content {
+    background-color: #7C584A;
+}
+
+.yellow-button.mdc-button--raised, .yellow-button.mdc-button--unelevated, .yellow-button.mdc-button--outlined:after, .yellow-button.mdc-button--outlined:before {
+    background-color: #FFEB3B !important;
+    color: #222 !important;
+}
+.yellow-button.mdc-button--outlined {
+    border-color: #FFEB3B !important;
+    color: #FFEB3B !important;
+}
+
+:root {
+    --mdc-theme-secondary: #7C584A;
+    --mdc-theme-primary: #FCA400;
+}
+
+a {
+    color: #AB795F;
+}
+a:hover {
+    color: #704E40;
+}
+
+::selection {
+    background-color: rgba(34, 150, 250, 0.4);
+}
+
+.alert {
+    background-color: #2399F7;
+    border-radius: 2px;
+    /* box-shadow: 0px 2px 4px black; */
+}
+.alert.alert-danger {
+    background-color: #E74C3C;
+    border-radius: 2px;
+    /* box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.7); */
+}
+.alert-primary {
+    background-color: #2399F7;
+}
+
+.purple-button.mdc-button--raised, .purple-button.mdc-button--unelevated, .purple-button.mdc-button--outlined:after, .purple-button.mdc-button--outlined:before {
+    background-color: #FCA400 !important;
+    color: #fff !important;
+}
+.purple-button.mdc-button--outlined {
+    border-color: #FCA400 !important;
+    color: #FCA400 !important;
+}

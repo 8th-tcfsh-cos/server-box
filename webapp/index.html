@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" /> -->
+
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Roboto'>
+    <link rel='stylesheet prefetch' href="https://fonts.googleapis.com/css?family=Share+Tech">
+    <link rel='stylesheet prefetch' href="https://fonts.googleapis.com/css?family=Share+Tech+Mono">
+
+    <title>BOX Alpha</title>
+
+    <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+    <meta name="theme-color" content="#FCA400">
+
+    <link rel="stylesheet" href="/files/material.teal-blue.min.css"/>
+    <link rel="stylesheet" href="/files/material-components-web.min.css"/>
+
+    <link rel="stylesheet" href="/files/bootstrap.css" media="screen">
+    <link rel="stylesheet" href="/files/custom.min.css">
+    <link rel="stylesheet" href="/files/style.css?v=1.6">
+    <link rel="stylesheet" href="app.css?v=1.6">
+</head>
+
+<body id="body">
+
+    <div id="top-bar">
+        <header class="mdc-top-app-bar mdc-top-app-bar--fixed">
+            <div class="mdc-top-app-bar__row">
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                    <a id="menu-icon" class="material-icons mdc-top-app-bar__action-item mdc-top-app-bar__navigation-icon"><span class="material-icons">menu</span></a>
+                    <span class="mdc-top-app-bar__title">TCFSH 8th COS</span>
+                </section>
+                <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end" role="toolbar">
+                    <a id="login-icon" class="material-icons mdc-top-app-bar__action-item" aria-label="login" alt="login" href="javascript:void(0);" target="_blank"><span class="material-icons">person</span></a>
+                    <a id="settings-icon" class="material-icons mdc-top-app-bar__action-item" aria-label="settings" alt="settings" href="javascript:void(0);"><span class="material-icons">settings</span></a>
+                    <a id="home-icon" class="material-icons mdc-top-app-bar__action-item" aria-label="home" alt="home" href="javascript:void(0);"><span class="material-icons">home</span></a>
+                </section>
+            </div>
+        </header>
+
+    </div>
+
+    <div id="drawer">
+        <aside class="mdc-drawer mdc-drawer--modal mdc-drawer--temporary">
+            <nav class="mdc-drawer__drawer">
+                <header class="mdc-drawer__header mdc-theme--on-secondary mdc-theme--secondary-bg">
+                    <div class="mdc-drawer__header-content mdc-ripple-surface">
+                        TCFSH 8th COS
+                    </div>
+                </header>
+                <div class="mdc-drawer__content">
+                    <nav class="mdc-list">
+                        <a class="mdc-list-item drawer-link" href="javascript:void(0);">
+                            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">home</i>
+                            箱子首頁
+                        </a>
+                        <a class="mdc-list-item drawer-link" href="javascript:void(0);">
+                            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">dashboard</i>
+                            公告事項
+                        </a>
+                        <a class="mdc-list-item drawer-link" href="javascript:void(0);">
+                            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">thumb_up</i>
+                            幫助我們
+                        </a>
+                        <a class="mdc-list-item drawer-link" href="javascript:void(0);">
+                            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">assignment</i>
+                            作業列表
+                        </a>
+                        <a class="mdc-list-item drawer-link" href="javascript:void(0);">
+                            <i class="material-icons mdc-list-item__graphic" aria-hidden="true">history</i>
+                            更新紀錄
+                        </a>
+                    </nav>
+                </div>
+            </nav>
+        </aside>
+        <div class="mdc-drawer-scrim"></div>
+    </div>
+
+    <div id="main-content" class="page-content">
+
+
+        <div class="section-header clearfix" id="title">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="page-header">
+                        BOX Alpha
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="alert alert-dismissible alert-danger" style="margin-top: 1.5rem;">
+            <button type="button" class="close" data-dismiss="alert">&times;</button>
+            假的，現在還不能用
+        </div>
+
+        <section class="page-section" style="margin-top: 2rem;">
+            <p>
+                BOX (BOX: Overloading Expediency) 為箱子的 Web App 版本，目前在 Alpha 測試階段 (Version: 1.0 Acoustic Alligator) ，若發現任何 bug 請<a href="https://github.com/8th-tcfsh-cos/server-box/issues/new" target="_blank">立即回報</a>。
+            </p>
+            <p>
+                之後如果我閒到炸的話應該會有 Android 版的 (?)
+            </p>
+        </section>
+
+        <footer id="footer">
+            <hr></hr>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-unstyled">
+                        <li class="float-lg-right"><a href="#top">回頂端</a></li>
+                        <li><a href="https://github.com/8th-tcfsh-cos/server-box" target="_blank">Source</a></li>
+                        <!-- <li><a href="https://facebook.com">Facebook</a></li>
+                        <li><a href="https://plus.google.com">Google+</a></li> -->
+                        <li><a href="/contribute.html">Contribute</a></li>
+                    </ul>
+                    <!-- <p>Theme created by <a href="http://thomaspark.co">Thomas Park</a> which is released under the <a href="https://github.com/thomaspark/bootswatch/blob/master/LICENSE">MIT License</a>.</p> -->
+                    <p>
+                        This page uses <a href="https://material.io">Material Design</a> web components by Google and web fonts from <a href="https://fonts.google.com/">Google Fonts</a>.
+                    </p>
+                    <p>Contents and code in this page are released under a
+                        <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                            <!-- Creative Commons Attribution-ShareAlike 4.0 International License -->
+                            CC-BY-SA 4.0 License
+                        </a>
+                        and an
+                        <a rel="license" href="https://opensource.org/licenses/MIT">
+                            MIT License
+                        </a>
+                        respectively.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="/files/jquery.min.js"></script>
+    <script type="text/javascript" src="/files/popper.min.js"></script>
+    <script type="text/javascript" src="/files/bootstrap.min.js"></script>
+    <script defer src="/files/material-components-web.min.js"></script>
+
+    <script>
+        $(function(){
+            // attach a ripple to each button
+            for (var i = 0; i < document.querySelectorAll('.mat-button').length; i++) {
+                var btn = document.querySelectorAll('.mat-button')[i];
+                var rip = new mdc.ripple.MDCRipple(btn);
+            }
+            // attach a ripple to each drawer item
+            for (var i = 0; i < document.querySelectorAll('.drawer-link').length; i++) {
+                var btn = document.querySelectorAll('.drawer-link')[i];
+                var rip = new mdc.ripple.MDCRipple(btn);
+            }
+            // attach a ripple to each material icon
+            for (var i = 0; i < document.querySelectorAll('.mdc-top-app-bar__action-item').length; i++) {
+                var btn = document.querySelectorAll('.mdc-top-app-bar__action-item')[i];
+                var rip = new mdc.ripple.MDCRipple(btn);
+                rip.unbounded=true;
+            }
+
+            for (var i = 0; i < document.querySelectorAll('.mdc-drawer__header-content').length; i++) {
+                var btn = document.querySelectorAll('.mdc-drawer__header-content')[i];
+                var rip = new mdc.ripple.MDCRipple(btn);
+                // rip.unbounded=true;
+            }
+            for (var i = 0; i < document.querySelectorAll('.an-card').length; i++) {
+                var btn = document.querySelectorAll('.an-card')[i];
+                var rip = new mdc.ripple.MDCRipple(btn);
+                // rip.unbounded=true;
+            }
+
+            // const checkbox = new mdc.checkbox.MDCCheckbox(document.querySelector('.mdc-checkbox'));
+            // const formField = new mdc.formField.MDCFormField(document.querySelector('.mdc-form-field'));
+            // formField.input = checkbox;
+
+            // instantiate all text fields
+            for (var i = 0; i < document.querySelectorAll('.mdc-text-field').length; i++) {
+                var tf = document.querySelectorAll('.mdc-text-field')[i];
+                var txt = new mdc.textField.MDCTextField(tf);
+            }
+
+            // and text field icons
+            for (var i = 0; i < document.querySelectorAll('.mdc-text-field__icon').length; i++) {
+                var icon = new mdc.textField.MDCTextFieldIcon(document.querySelectorAll('.mdc-text-field__icon')[i]);
+            }
+
+            const topAppBarElement = document.querySelector('.mdc-top-app-bar');
+            // new mdc.drawer.MDCTemporaryDrawer(document.querySelector('.mdc-drawer--temporary'));
+            let drawer = mdc.drawer.MDCTemporaryDrawer.attachTo(document.querySelector('.mdc-drawer'));
+            $('#menu-icon')[0].addEventListener('click', function(){
+                drawer.open = true;
+            });
+
+            // const tabBar = new mdc.tabs.MDCTabBar(document.querySelector('.mdc-tab-bar'));
+            // for (var i = 0; i < document.querySelectorAll('.mdc-tab').length; i++) {
+            //     mdc.tabs.MDCTab.attachTo(document.querySelectorAll('.mdc-tab')[i]);
+            // }
+            // for (var i = 0; i < document.querySelectorAll('.mdc-tab-indicator').length; i++) {
+            //     mdc.tabs.MDCTabIndicator.attachTo(document.querySelectorAll('.mdc-tab-indicator')[i]);
+            // }
+            // mdc.tabs.MDCTabBarScroller.attachTo(document.querySelector('.mdc-tab-scroller'));
+
+
+            // function to get filename from a path
+            function get_filename(s){
+                return s.substring(s.lastIndexOf('/')+1);
+            }
+
+            // find link of current page in drawer and highlight it
+            for(var i = 0; i < $('.drawer-link').length; i++){
+                var link = $('.drawer-link')[i];
+                // if(link == null) continue;
+                if(get_filename(link.href) == get_filename(window.location.pathname)){
+                    link.classList.add('mdc-list-item-active');
+                }
+                // path '/' == path 'index.html'
+                if(get_filename(link.href) == 'index.html'){
+                    if(get_filename(window.location.pathname) == ''){
+                        link.classList.add('mdc-list-item-active');
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
