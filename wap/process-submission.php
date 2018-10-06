@@ -38,9 +38,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $captcha = $_GET["g-recaptcha-response"];
 }
 
-// filename format: fund-HHMMSSA-DEADBEEF (random hex to avoid time collision)
+// filename format: fund-YYYYMMDD--HHMMSS-DEADBEEF (random hex to avoid time collision)
 // random hex black magic WARNING: not random enough
-$filename = "subs/idea-" . date("hisa") . "-" . substr(md5(rand(0, 2147483647)), 0, 8);
+$tmpname = "idea-" . date("Ymd-His") . "-" . substr(md5(rand(0, 2147483647)), 0, 8);
+$filename = "subs/" . $tmpname;
+$uploadfilename = "uploads/" . $tmpname;
 
 // verify inputs
 $inputOk = true;
@@ -71,7 +73,7 @@ $target_name = "";
 if($has_file){
     $uploadOk = 1;
 
-    $target_dir = "uploads/" . $filename . '/';
+    $target_dir = $uploadfilename . '/';
     $target_file = $target_dir . basename($_FILES["attachment"]["name"]);
 
     // create a new path for new upload
@@ -99,6 +101,8 @@ if($has_file){
 
 // create new file
 $file = fopen($filename, "w");
+$txt = "Request IP: " . $_SERVER['REMOTE_ADDR'];
+fwrite($file, $txt . "\n\n");
 $txt = "Name: " . $name;
 fwrite($file, $txt . "\n\n");
 $txt = "Recipient(s): " . $groups;
@@ -106,6 +110,8 @@ fwrite($file, $txt . "\n\n");
 $txt = "Uploaded file: " . $has_file;
 fwrite($file, $txt . "\n\n");
 $txt = "Submission:\n\n" . $sub;
+fwrite($file, $txt);
+$txt = "\n";
 fwrite($file, $txt);
 fclose($file);
 
