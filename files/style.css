@@ -1,3 +1,6 @@
+@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
+
+
 ::selection {
     background-color: rgba(0, 204, 153, 0.3);
     text-shadow: none;
@@ -29,6 +32,10 @@ input::-webkit-inner-spin-button {
 
 .mdc-drawer__header {
     max-height: 32%; /* for small devices */
+}
+
+.mdc-drawer__drawer {
+    height: 100%;
 }
 
 body {
@@ -723,6 +730,11 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
 
 .mdc-drawer .mdc-drawer__drawer {
     box-shadow: 4px 0px 10px rgba(0,0,0,.2), 8px 0px 16px rgba(0,0,0,.4);
+    /* width: calc(100% - 64px); */
+}
+.mdc-drawer.mdc-drawer--modal {
+    box-shadow: 4px 0px 10px rgba(0,0,0,.2), 8px 0px 16px rgba(0,0,0,.4);
+    width: 100%;
 }
 .mdc-drawer__content {
     background-color: #222;
@@ -733,8 +745,11 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
     margin: 0.5rem;
     border-radius: 4px;
 }
+.mdc-drawer .mdc-list-item:nth-child(1) {
+    margin: 0.5rem;
+}
 .mdc-drawer .mdc-list-item::before, .mdc-drawer .mdc-list-item::after {
-    background-color: #aaa;
+    background-color: #aaa !important;
 }
 .mdc-drawer .mdc-list-item:not(.mdc-list-item-active):hover {
     background-color: #242424;
@@ -747,6 +762,12 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
 .mdc-drawer .mdc-list {
     margin: 0;
     padding: 0;
+}
+.mdc-list-item.mdc-list-item-active .material-icons {
+    color: #fff;
+}
+.mdc-list-item .material-icons {
+    color: #ddd;
 }
 
 .table thead th, .table tbody td, .table tbody th {
@@ -806,8 +827,8 @@ label, .control-label, .help-block, .checkbox, .radio, .form-control-feedback {
     background-color: rgba(0,0,0,.4);
 }
 
-body.mdc-drawer-scroll-lock .page-content, body.mdc-dialog-scroll-lock .page-content,
-body.mdc-drawer-scroll-lock .mdc-top-app-bar, body.mdc-dialog-scroll-lock .mdc-top-app-bar {
+body.mdc-drawer-scroll-lock:not(.overlay-scroll-lock) .page-content, body.mdc-dialog-scroll-lock .page-content,
+body.mdc-drawer-scroll-lock:not(.overlay-scroll-lock) .mdc-top-app-bar, body.mdc-dialog-scroll-lock .mdc-top-app-bar {
     filter: blur(4px);
 }
 
@@ -815,28 +836,60 @@ li {
     margin-bottom: 0.25rem;
 }
 
+.fill-list-button-container {
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.fill-list-button-container .fill-list-button {
+    width: 4rem;
+    flex-grow: 1;
+    flex-shrink: 0.5;
+    margin: 4px 6px;
+    height: 2.7rem;
+    transition: height 0.6s;
+}
+.fill-list-button-container .fill-list-button:nth-of-type(1) {
+    margin-left: 0;
+}
+.fill-list-button-container .fill-list-button:nth-last-of-type(1) {
+    margin-right: 0;
+}
+
+.update-list {
+    font-size: 1rem;
+    margin-top: 0.85rem;
+}
+
+
+
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
-    font-family: "Lato";
+    font-family: "Roboto";
 }
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-floating-label {
-    font-family: 'Lato';
+    font-family: 'Roboto';
 }
 .mdc-text-field:not(.mdc-text-field--disabled):not(.mdc-text-field--invalid) .mdc-text-field__input {
-    font-family: 'Lato';
+    font-family: 'Roboto';
 }
 [data-mdc-tooltip]:before {
-    font-family: 'Lato';
+    font-family: 'Roboto';
 }
 .announcement .a-date {
     font-family: "Share Tech Mono";
 }
 
-@import url(https://fonts.googleapis.com/earlyaccess/notosanstc.css);
 *:not(.material-icons) {
     font-family: "Share Tech", "Noto Sans TC";
 }
+.katex * {
+    font-family: inherit;
+}
 
-
+.version-title {
+    font-family: "Share Tech Mono", "Share Tech";
+}
 
 
 /* below are not used XXX */

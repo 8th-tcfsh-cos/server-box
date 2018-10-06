@@ -38,9 +38,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $captcha = $_GET["g-recaptcha-response"];
 }
 
-// filename format: fund-HHMMSSA-DEADBEEF (random hex to avoid time collision)
+// filename format: fund-YYYYMMDD--HHMMSS-DEADBEEF (random hex to avoid time collision)
 // random hex black magic WARNING: not random enough
-$filename = "subs/fund-" . date("hisa") . "-" . substr(md5(rand(0, 2147483647)), 0, 8);
+$filename = "subs/fund-" . date("Ymd-His") . "-" . substr(md5(rand(0, 2147483647)), 0, 8);
 
 // verify inputs
 $inputOk = true;
@@ -69,11 +69,15 @@ if(intval($responseKeys["success"]) !== 1) {
 
 // create new file
 $file = fopen($filename, "w");
+$txt = "Request IP: " . $_SERVER['REMOTE_ADDR'];
+fwrite($file, $txt . "\n\n");
 $txt = "Name: " . $name;
 fwrite($file, $txt . "\n\n");
 $txt = "Amount requested: NT$" . $money;
 fwrite($file, $txt . "\n\n");
 $txt = "Submission:\n\n" . $sub;
+fwrite($file, $txt);
+$txt = "\n";
 fwrite($file, $txt);
 fclose($file);
 
