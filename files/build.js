@@ -7,9 +7,9 @@ $(function(){
     async function load() {
         try {
             // load common layouts from local directory
-            await $("#footer").load("footer.html?v=1.5");
-            await $("#drawer").load("drawer.html?v=1.5");
-            await $("#top-bar").load("top-bar.html?v=1.5");
+            await $("#footer").load("footer.html?v=1.6");
+            await $("#drawer").load("drawer.html?v=1.6");
+            await $("#top-bar").load("top-bar.html?v=1.6");
 
             await sleep(100);
 
@@ -24,8 +24,8 @@ $(function(){
                 var rip = new mdc.ripple.MDCRipple(btn);
             }
             // attach a ripple to each material icon
-            for (var i = 0; i < document.querySelectorAll('.material-icons').length; i++) {
-                var btn = document.querySelectorAll('.material-icons')[i];
+            for (var i = 0; i < document.querySelectorAll('.mdc-top-app-bar__action-item').length; i++) {
+                var btn = document.querySelectorAll('.mdc-top-app-bar__action-item')[i];
                 var rip = new mdc.ripple.MDCRipple(btn);
                 rip.unbounded=true;
             }

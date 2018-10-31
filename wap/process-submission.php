@@ -47,7 +47,7 @@ $uploadfilename = "uploads/" . $tmpname;
 // verify inputs
 $inputOk = true;
 if($name == "") $inputOk = false;
-if(strlen($sub) < 20) $inputOk = false;
+if(strlen($sub) < 20 || strlen($sub) > 10000) $inputOk = false;
 if(!$inputOk){
     // input invalid
     // echo "$name $groups $sub";

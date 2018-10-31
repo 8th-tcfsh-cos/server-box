@@ -50,7 +50,7 @@ if(!is_numeric($money)) {
     if((int)$money < 10 || (int)$money > 1000000) $inputOk = false;
 }
 if($name == "") $inputOk = false;
-if(strlen($sub) < 20) $inputOk = false;
+if(strlen($sub) < 20 || strlen($sub) > 10000) $inputOk = false;
 if(!$inputOk){
     // input invalid
     // echo "$name $money $sub";

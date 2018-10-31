@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" /> -->
 
@@ -16,7 +16,7 @@
     <!-- Bootstrap CSS -->
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
 
-    <title>箱子</title>
+    <title>更新紀錄</title>
 
     <link rel="shortcut icon" type="image/png" href="/favicon.png"/>
     <meta name="theme-color" content="#2196F3">
@@ -29,7 +29,7 @@
 
     <link rel="stylesheet" href="/files/bootstrap.css" media="screen">
     <link rel="stylesheet" href="/files/custom.min.css">
-    <link rel="stylesheet" href="/files/style.css?v=1.5">
+    <link rel="stylesheet" href="/files/style.css?v=1.6">
     <!-- <link rel="stylesheet" href="https://bootswatch.com/4/darkly/bootstrap.min.css"> -->
 
     <!-- Nice fonts -->
@@ -44,7 +44,7 @@
 
     <div id="drawer"></div>
 
-    <div class="page-content">
+    <div id="main-content" class="page-content">
 
 
         <div class="section-header clearfix" id="title">
@@ -58,7 +58,50 @@
         </div>
 
         <section class="page-section">
-            <h3 class="version-title">v1.5 (2018/10/03)</h3>
+            <h3 class="version-title">目錄</h3>
+            <ul class="update-list">
+                <li><a href="#v1.0">Version 1.0</a> Aquatic Avocado<br>
+                    <ul>
+                        <li><a href="#v1.6">v1.6</a></li>
+                        <li>
+                            <a href="#v1.5">v1.5</a>
+                            <ul>
+                                <li><a href="#v1.5-1">v1.5.1</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <br>
+            <hr>
+        </section>
+
+        <section class="page-section">
+            <h3 class="version-title" id="v1.6">v1.6 [2018/10/06]</h3>
+            <ol class="update-list">
+                <li>我把彩虹吃掉了。</li>
+                <li>
+                    字型大小會隨著螢幕寬度調整。<br>
+                    <span class="text-warning">注意：這可能導致一些排版問題，若有發現請回報給開發者。</span>
+                </li>
+                <li>大量視覺性優化 (自己找)。</li>
+            </ol>
+            <br>
+            <hr>
+        </section>
+
+        <section class="page-section">
+            <h3 class="version-title" id="v1.5-1">v1.5-1 [MINOR]</h3>
+            <ol class="update-list">
+                <li>表單上傳字數限制改為 20-10000 字。</li>
+                <li>表單現在會紀錄上傳的時間及來源 IP 。</li>
+            </ol>
+            <br>
+            <hr>
+        </section>
+
+        <section class="page-section">
+            <h3 class="version-title" id="v1.5">v1.5 [2018/10/03]</h3>
             <ol class="update-list">
                 <li>新增了更新紀錄。</li>
                 <li>修復了中文字型在大部份裝置上無法正確顯示的問題。(但是載入時間變長QQ)</li>
@@ -93,7 +136,7 @@
         </footer>
 
         <script type="text/javascript" src="/files/jquery.min.js"></script>
-        <script type="text/javascript" src="/files/build.js?v=1.5"></script>
+        <script type="text/javascript" src="/files/build.js?v=1.6"></script>
 
         <script type="text/javascript" src="/files/popper.min.js"></script>
         <script type="text/javascript" src="/files/bootstrap.min.js"></script>
